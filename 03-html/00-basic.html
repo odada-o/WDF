@@ -66,7 +66,88 @@
             <h2>link 태그</h2>
         </header>
         <section>
-            <a href="https://www.w3schools.com/html/html_links.asp" target="_blank">HTML Link</a>
+            <!-- 절대경로 -->
+            <a href="https://naver.com" target="_blank">HTML Link</a>
+            <!-- 상대경로 -->
+            <a href="./01-layout.html">layout.html</a>
+            <a href="./images/01-01-daisy-w.jpeg">daisy image</a>
+            <a href="images/01-01-daisy-w.jpeg">daisy image222</a>
+            <a href="mailto:eehd10@naver.com">eehd10@naver.com</a>
+            <!-- 웹접근성 -->
+            <a href="https://www.naver.com" target="_blank" title="새창열림">네이버</a>
+            <a href="#main">main 바로가기</a>
+            <a href="./sub/sub.html#sec2">sub.html > id 값이 sec3 바로가기</a>
+        </section>
+
+        <header>
+            <h2>images 태그</h2>
+        </header>
+        <section>
+            <!-- 상대경로 -->
+            <!-- width, height 속성엔 단위 생략 -->
+            <img src="./images/01-01-daisy-w.jpeg" alt="daisy" width="200">
+            <img src="./images/01-01-daisy-w.jpeg" alt="daisy" style="width: 300px;">
+            <!-- 절대경로 -->
+            <a href="https://www.brain-study.co.kr/wm/" target="_blank" title="새창열림">
+                <img src="https://ssl.pstatic.net/melona/libs/1446/1446115/9aa34cd1746588f618f0_20230612162300881.jpg" alt="뇌새김 한 달 4권 하실 분 찾습니다. 이직을 계획중이신 2~30대 분들! 말도 안 되지만 1주 1권 영어 학습지 500원! 단 2시까지만 본 혜택은 이후에도 동일하게 적용될 수 있음 / 렌탈 시 최초 1회" width="100%">
+            </a>
+
+            <!-- 반응형 이미지 -->
+            <picture>
+                <!-- width 650px 이상일 경우 -->
+                <source media="(min-width: 650px)" srcset="images/img_food.jpg">
+                <!-- width 465px 이상일 경우 -->
+                <source media="(min-width: 465px)" srcset="./images/img_car.jpg">
+                <img src="./images/img_girl.jpg" alt="뒷통수 아줌마" width="100%">
+            </picture>
+        </section>
+
+        <header>
+            <h2>table 태그</h2>
+        </header>
+        <section>
+            <table>
+                <caption>테이블 설명 : 자세한 설명</caption>
+                <colgroup>
+                    <col width="40%">
+                    <col span="3">
+                </colgroup>
+                <thead>
+                    
+                </thead>
+            </table>
+        </section>
+
+
+
+
+
+
+
+        <section id="nav">
+            <h2>nav</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+        </section>
+        <section>
+            <h2>c1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+        </section>
+        <section>
+            <h2>c1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+        </section>
+        <section>
+            <h2>c1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+        </section>
+        <section>
+            <h2>c1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+        </section>
+        <section id="main">
+            <h2>Main</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fuga rem inventore doloribus neque perferendis iste sed ducimus quibusdam, recusandae velit repellendus esse? Nostrum nulla, libero sunt nam rerum iusto?</p>
+            <a href="#nav">nav 바로가기</a>
         </section>
     </div>
     <!-- 주석 태그 -->
