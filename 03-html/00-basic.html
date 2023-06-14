@@ -107,22 +107,67 @@
         </header>
         <section>
             <table>
+                <!-- 웹접근성 요건 추가 -->
                 <caption>테이블 설명 : 자세한 설명</caption>
                 <colgroup>
                     <col width="40%">
-                    <col span="3">
+                    <col span="3"> <!-- span : 열의 갯수 -->
                 </colgroup>
                 <thead>
-                    
+                    <tr>
+                        <td>이름</td>
+                        <td>국어</td>
+                        <td>영어</td>
+                        <td>수학</td>
+                    </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                        <td>다니엘</td>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                    </tr>
+                    <tr>
+                        <td>민지</td>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                    </tr>
+                    <tr>
+                        <td>하니</td>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                    </tr>
+                    <tr>
+                        <td>혜인</td>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                        <td>열</td>
+                    </tr>
+                </tfoot>
             </table>
         </section>
-
-
-
-
-
-
+        <style>
+            table, tr, td {
+                border: 3px solid #2f00ff;
+            }
+            table {
+                width: 100%;
+            }
+            td {
+                height: 70px;
+            }
+        </style>
 
         <section id="nav">
             <h2>nav</h2>
