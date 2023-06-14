@@ -109,56 +109,65 @@
             <table>
                 <!-- 웹접근성 요건 추가 -->
                 <caption>테이블 설명 : 자세한 설명</caption>
+                <!-- 열의 가로 사이즈 -->
                 <colgroup>
                     <col width="40%">
                     <col span="3"> <!-- span : 열의 갯수 -->
                 </colgroup>
+                <!-- 테이블의 구분 -->
                 <thead>
                     <tr>
-                        <td>이름</td>
-                        <td>국어</td>
-                        <td>영어</td>
-                        <td>수학</td>
+                        <th scope="col" rowspan="2">과목</th>
+                        <th scope="col" colspan="4">1-1</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">다니엘</th>
+                        <th scope="col">민지</th>
+                        <th scope="col">하니</th>
+                        <th scope="col">혜인</th>
                     </tr>
                 </thead>
+                <!-- 테이블의 본문 -->
                 <tbody>
                     <tr>
-                        <td>다니엘</td>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
+                        <th scope="row">국어</th>
+                        <th scope="row">국어</th>
+                        <td>100점</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
                     </tr>
                     <tr>
-                        <td>민지</td>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
+                        <th scope="row">영어</th>
+                        <th scope="row">영어</th>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
                     </tr>
                     <tr>
-                        <td>하니</td>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
-                    </tr>
-                    <tr>
-                        <td>혜인</td>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
+                        <th scope="row">수학</th>
+                        <th scope="row">수학</th>
+                        <td>80</td>
+                        <td>80</td>
+                        <td>80</td>
+                        <td>80</td>
                     </tr>
                 </tbody>
+                <!-- 테이블의 요약 -->
                 <tfoot>
                     <tr>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
-                        <td>열</td>
+                        <th scope="row">평균 점수</th>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>90</td>
+                        <td>999</td>
                     </tr>
                 </tfoot>
             </table>
         </section>
         <style>
-            table, tr, td {
+            table, tr, td, th {
                 border: 3px solid #2f00ff;
             }
             table {
@@ -166,6 +175,12 @@
             }
             td {
                 height: 70px;
+            }
+            thead {
+                background: #ffea00;
+            }
+            tfoot {
+                background: #eee;
             }
         </style>
 
