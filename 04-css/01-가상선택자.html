@@ -95,7 +95,52 @@
             content: 'before';
         }
         .lst2 a::after {
-            content: 'after';
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: blue;
+        }
+    </style>
+    <br><br><br><br>
+    <ul class="lst3">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <style>
+        .lst3 {
+            display: flex;
+        }
+        .lst3 li::after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+        .lst3 li:last-child::after {
+            display: none;
+        }
+        .lst3::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 50px;
+            background: red;
+            margin-right: 10px;
+        }
+        .lst3::after {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 50px;
+            background: red;
+            margin-left: 10px;
         }
     </style>
 
