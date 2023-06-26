@@ -73,27 +73,114 @@
     </style>
 
     <h2>flex</h2>
-    <div class="box4">
+    <div class="box-g box4">
         <div>1</div>
         <div>2</div>
         <div>3</div>
         <div>4</div>
     </div>
     <style>
+        /* 공통 클래스 */
+        .box-g {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgb(207, 207, 207);
+        }
+        .box-g div{
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            border: 1px solid #000;
+        }
         .box4 {
             display: flex;
         }
         .box4 div {
-            width: 100px;
-            height: 100px;
             margin-right: 10px;
-            background: lightcoral;
-            border: 1px solid #000;
         }
         .box4 div:nth-child(4) {
             margin-right: 0;
         }
     </style>
+
+    <div class="box-g box5">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box5 {
+            display: flex;
+            flex-direction: row-reverse; /* 세로방향 */
+        }
+    </style>
+
+    <div class="box-g box6">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <style>
+        .box6 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <div class="box-g box7">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box7 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <div class="box-g box8">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box8 {
+            display: flex;
+            justify-content: flex-start;
+        }
+    </style>
+    <div class="box-g box9">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box9 {
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+    <div class="box-g box10">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box10 {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+
 
 
     <br><br><br><br><br><br>
