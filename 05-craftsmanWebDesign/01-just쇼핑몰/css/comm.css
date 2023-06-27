@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1.5;
+    color: #222328;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+    background: #eee;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background: lightpink;
+}
+.logo {
+    background-color: lightblue;
+}
+
