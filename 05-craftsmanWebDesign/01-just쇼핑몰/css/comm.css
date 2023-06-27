@@ -21,6 +21,29 @@
     background: lightpink;
 }
 .logo {
-    background-color: lightblue;
+    display: flex;
+    align-items: center;
 }
+.logo a {
+    display: block;
+    width: 200px;
+    height: 40px;
+}
+
+.gnb .depth1 {
+    display: flex;
+}
+.gnb .depth1 a {
+    display: block;
+    height: 100px;
+    padding: 0 50px;
+    line-height: 100px;
+    background: lawngreen;
+    border: 1px solid #000;
+    text-align: center;
+}
+.gnb .depth2 {
+    /* display: none; */
+}
+
 
