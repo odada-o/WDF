@@ -38,10 +38,16 @@
     height: 100px;
     padding: 0 50px;
     line-height: 100px;
-    background: lawngreen;
-    border: 1px solid #000;
+    /* background: lawngreen;
+    border: 1px solid #000; */
     text-align: center;
 }
+.gnb .depth1 > li > a:hover {
+    /* background: #0060ff; */
+    border-bottom: 5px solid #0060ff;
+}
+
+
 .gnb .depth2 {
     /* display: none; */
 }
