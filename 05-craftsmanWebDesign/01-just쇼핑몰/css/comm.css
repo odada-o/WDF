@@ -75,3 +75,36 @@
 .slide a, .slide img {
     display: block;
 }
+
+/* contents */
+.contents {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.tabs {
+    width: 340px;
+}
+.bnr {
+    width: 400px;
+}
+.bnr a, .bnr img {
+    display: block;
+}
+.goto {
+    width: 340px;
+}
+.goto ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.goto li {
+    width: 54%;
+    background: blue;
+}
+.goto a {
+    display: block;
+    height: 80px;
+    background: red;
+}
