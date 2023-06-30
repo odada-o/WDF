@@ -82,9 +82,48 @@
     justify-content: space-between;
     padding: 10px 0;
 }
-.tabs {
-    width: 340px;
+/* tab */
+.tabs-wrap {
+    position: relative;
+    display: flex;
+    width: calc(100% / 2 - 230px);
 }
+.tabs-wrap .tab-item {
+    width: 50%;
+}
+/* 비활성화 tab */
+.tabs-wrap .tab-item .tit {
+    height: 50px;
+    padding-top: 15px;
+    border-bottom: 2px solid #111;
+    background: #ddd;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+}
+/* 활성화 tab */
+.tabs-wrap .on .tit {
+    background: blue;
+    color: #fff;
+}
+.tabs-wrap .tab-item .cont {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 130px;
+    background: lightcoral;
+}
+.tabs-wrap .on .cont {
+    display: block;
+}
+.lst-bbs {
+    
+}
+
+
 .bnr {
     width: 400px;
 }
@@ -92,19 +131,22 @@
     display: block;
 }
 .goto {
-    width: 340px;
+    width: calc(100% / 2 - 230px);
 }
 .goto ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-content: space-between;
+    height: 180px;
 }
 .goto li {
-    width: 54%;
+    width: calc(50% - 5px);
+    height: calc(50% - 5px);
     background: blue;
 }
 .goto a {
     display: block;
-    height: 80px;
+    height: 100%;
     background: red;
 }
