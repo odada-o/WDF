@@ -12,13 +12,11 @@
 .wrap {
     width: 1200px;
     margin: 0 auto;
-    background: #eee;
 }
 .header {
     display: flex;
     justify-content: space-between;
     height: 100px;
-    background: #fff;
 }
 .logo {
     display: flex;
@@ -95,7 +93,7 @@
 .tabs-wrap .tab-item .tit {
     height: 50px;
     padding-top: 15px;
-    border-bottom: 2px solid #111;
+    border-bottom: 2px solid #333;
     background: #ddd;
     text-align: center;
     font-size: 16px;
@@ -104,7 +102,7 @@
 }
 /* 활성화 tab */
 .tabs-wrap .on .tit {
-    background: blue;
+    background: #333;
     color: #fff;
 }
 .tabs-wrap .tab-item .cont {
@@ -114,7 +112,6 @@
     left: 0;
     right: 0;
     height: 130px;
-    background: #ddd;
 }
 .tabs-wrap .on .cont {
     display: block;
@@ -155,6 +152,7 @@
 .lst-gallery li p {
     overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 
@@ -183,4 +181,29 @@
     display: block;
     height: 100%;
     background: red;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background: lightgreen;
+    border-top: 1px solid #d7d7d7;
+}
+.logo-foot a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.lst-sns {
+    display: flex;
+}
+.lst-sns li {
+    margin-left: 20px;
+}
+.lst-sns a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
 }
