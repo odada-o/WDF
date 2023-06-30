@@ -114,13 +114,47 @@
     left: 0;
     right: 0;
     height: 130px;
-    background: lightcoral;
+    background: #ddd;
 }
 .tabs-wrap .on .cont {
     display: block;
 }
 .lst-bbs {
-    
+    padding-top: 13px;
+}
+.lst-bbs li {
+    display: flex;
+    align-items: center;
+}
+.lst-bbs li::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-top: -4px;
+    margin-right: 10px;
+    background: red;
+}
+.lst-bbs li a {
+    display: block;
+    line-height: 2;
+}
+.lst-bbs li a:hover {
+    text-decoration: underline;
+}
+
+/* 갤러리 */
+.lst-gallery {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5px;
+}
+.lst-gallery li {
+    width: 100px;
+}
+.lst-gallery li p {
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 
