@@ -66,12 +66,18 @@
 }
 
 /* slide */
-.slide {
+.slide-wrap a, .slide-wrap img {
+    display: block;
+}
+.slide-wrap {
+    position: relative;
     overflow: hidden;
     height: 300px;
 }
-.slide a, .slide img {
-    display: block;
+.lst-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* contents */
