@@ -30,6 +30,10 @@
 
 .gnb .depth1 {
     display: flex;
+    position: relative;
+}
+.gnb .depth1 > li {
+    position: relative;
 }
 .gnb .depth1 > li > a {
     display: block;
@@ -44,16 +48,25 @@
     /* background: #0060ff; */
     border-bottom: 5px solid #0060ff;
 }
+.gnb .depth1 > li:last-child .depth2 {
+    border-right: 1px solid #dbdbdb;
+}
 .gnb .depth1:hover .depth2 {
     display: block;
 }
 
-
 /* nav depth2 */
 .gnb .depth2 {
-    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* display: none; */
     padding: 20px 0;
     background: #fff;
+    border: 1px solid #dbdbdb;
+    border-right: none;
 }
 .gnb .depth2 a {
     display: block;
