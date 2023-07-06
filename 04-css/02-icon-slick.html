@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slick | css</title>
+    <link rel="stylesheet" href="./dist/slick/slick.css">
+    <link rel="stylesheet" href="./dist/slick/slick-theme.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            line-height: 1.5;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>slick</h1>
+    <div class="sec-slide">
+        <div>
+            <img src="https://images.unsplash.com/photo-1688488994043-ffb1a6c211f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1688410053610-42290a7267df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2729&q=80" alt="">
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1688362379195-b8c04f735968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="">
+        </div>
+    </div>
+
+    <style>
+        .sec-slide {
+            width: 300px;
+            margin: 0 auto;
+            background: lightblue;
+        }
+        .sec-slide img {
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="./dist/slick/slick.min.js"></script>
+    
+    <script>
+    $(document).ready(function(){
+        $('.sec-slide').slick({
+            // setting-name: setting-value
+        });
+    });
+    </script>
+</body>
+</html>
