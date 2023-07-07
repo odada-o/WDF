@@ -22,13 +22,24 @@
     <div class="bg1">background color</div>
     <style>
         body {
-            background-color: #222;
-            color: #fff;
+            /* background-color: #222; */
+            /* color: #fff; */
         }
         .bg1 {
             width: 100%;
             height: 100px;
             background-color: rgb(102, 51, 153, 0.5);
+        }
+    </style>
+
+    <h2>background-attachment</h2>
+    <div class="box2"></div>
+    <style>
+        .box2 {
+            height: 300px;
+            background-image: url("https://plus.unsplash.com/premium_photo-1669863282929-d738752329a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80");
+            background-attachment: fixed;
+            background-size: 100% auto;
         }
     </style>
 
@@ -43,9 +54,90 @@
             background-image: url("https://avatars.githubusercontent.com/u/10627436?v=4");
             background-repeat: no-repeat;
             background-position: 50% 0;
-            background-attachment: fixed;
+            background-size: 200px auto;
         }
     </style>
+
+    <h2>background-size</h2>
+    <div class="box box3"></div>
+    <br>
+    <div class="box box4"></div>
+
+    <style>
+        .box {
+            width: 800px;
+            height: 300px;
+            border: 10px solid #000;
+            background-image: url("https://avatars.githubusercontent.com/u/10627436?v=4");
+            background-repeat: no-repeat;
+        }
+        .box3 {
+            background-size: contain;
+            /* logo, 아이콘 : 잘리면 안되는 이미지 */
+        }
+        .box4 {
+            background-size: cover;
+            background-position: 0 -180px;
+            /* 배경 이미지 : 박스를 채우는 이미지 */
+        }
+    </style>
+
+    <h2>Sprite</h2>
+
+    <div class="wrap">
+        <div class="img-g sprite1"></div>
+        <div class="img-g sprite2"></div>
+        <div class="img-g sprite3"></div>
+        <div class="img-g sprite4"></div>
+
+    </div>
+    <style>
+        .wrap {
+            display: flex;
+        }
+        .img-g {
+            margin-right: 20px;
+            background-image: url("./images/sprite.png");
+            background-repeat: no-repeat;
+        }
+        .sprite1 {
+            width: 134px;
+            height: 132px;
+            background-position: 0 0;
+        }
+        .sprite2 {
+            width: 40px;
+            height: 38px;
+            background-position: -140px 0;
+        }
+        .sprite3 {
+            width: 40px;
+            height: 40px;
+            background-position: -140px -40px;
+        }
+        .sprite3:hover {
+            background-position: -140px -260px;
+        }
+        .sprite4 {
+            width: 30px;
+            height: 30px;
+            background-position: -200px 0;
+            cursor: pointer;
+        }
+        .sprite4:hover {
+            background-position: -240px 0;
+        }
+        .sprite4:active {
+            background-position: -280px 0;
+        }
+        .sprite4:visited {
+            background-position: -320px 0;
+        }
+    </style>
+    
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
 
 </body>
 </html>
