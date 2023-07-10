@@ -61,5 +61,50 @@
         }
 
     </style>
+
+    <h2>layout</h2>
+    <div class="wrap">
+        <header class="box">
+            <h1>logo</h1>
+            <nav>Navigation Menu</nav>
+        </header>
+        <div class="container">
+            <div class="content box">content</div>
+            <div class="content box">content</div>
+            <div class="content box">content</div>
+        </div>
+        <footer class="box">
+            <h1>logo</h1>
+            <div class="copyright">copyright</div>
+            <div class="sns">sns</div>
+        </footer>
+    </div>
+    <style>
+        .box {
+            margin: 20px;
+            background: lightgray;
+        }
+        .wrap {
+            padding: 20px;
+            background: lightcyan;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+        }
+        .container {
+            display: flex;
+        }
+        .content {
+            flex-grow: 1;
+            height: 300px;
+        }
+        footer {
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+        }
+    </style>
 </body>
 </html>
