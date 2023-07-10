@@ -206,7 +206,7 @@
         }
     </style>
 
-    <h2>items</h2>
+    <h2>order</h2>
     <div class="box-g box13">
         <div>1</div>
         <div>2</div>
@@ -221,6 +221,27 @@
         }
         .box13 div:nth-child(2) {
             order: 3;
+        }
+    </style>
+
+    <h2>flex-grow</h2>
+    <div class="box-g box14">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <style>
+        .box14 {
+            display: flex;
+        }
+        .box14 div:nth-child(1) {
+            flex-grow: 1;
+        }
+        .box14 div:nth-child(2) {
+            flex-grow: 1;
+        }
+        .box14 div:nth-child(3) {
+            flex-grow: 2;
         }
     </style>
 
