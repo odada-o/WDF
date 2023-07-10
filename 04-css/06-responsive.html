@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive | css</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: #000;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-g box1">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    
+    <style>
+        .box1 {
+            display: flex;
+        }
+        .box1 div {
+            flex-grow: 1;
+            height: 300px;
+            background: lightgray;
+            border: 10px dotted #000;
+        }
+    </style>
+</body>
+</html>
