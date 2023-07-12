@@ -54,9 +54,9 @@
 /* gnb 마우스 오버 후 */
 .gnb .depth1:hover .depth2 {
     display: block;
-    height: 200px;
-    padding: 10px 0;
-    border-width: 1px;
+    max-height: 300px;
+    /* padding: 10px 0; */
+    border-bottom-width: 1px;
 }
 
 /* nav depth2 */
@@ -69,12 +69,24 @@
     right: 0;
     z-index: 1000;
     overflow: hidden;
-    height: 0;
-    padding: 0;
+    max-height: 0;
+    /* padding: 0; */
     background: #fff;
-    border: 0 solid #dbdbdb;
+    border-bottom: 0 solid #dbdbdb;
     border-right: none;
     transition: all .3s;
+}
+.gnb .depth2::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 0;
+    bottom: 5px;
+    width: 1px;
+    background: rgba(0,0,0,0.1);
+}
+.gnb .depth1 > li:last-child .depth2::after {
+    display: none;
 }
 .gnb .depth2 a {
     display: block;
