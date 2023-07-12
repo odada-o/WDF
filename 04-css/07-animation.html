@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation | css</title>
+</head>
+<body>
+
+    <h1>Animation</h1>
+    <div class="box1">
+        <div class="ani"></div>
+    </div>
+    <style>
+        .box1 {
+            position: relative;
+            height: 500px;
+            background: lightgray;
+        }
+        .ani {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: red;
+            animation-name: ani-box;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        @keyframes ani-box {
+            0% {background: red;top: 0;left: 0;}
+            25% {background: yellow;top: 0;left: calc(100% - 200px);}
+            50% {background: green;top: 300px;left: 700px;}
+            75% {background: blue;top: 100px;left: 0px;}
+            100% {background: purple;top: 0;left: 0;}
+        }
+    </style>
+
+    <div class="box2">
+        <div class="square"></div>
+        <div class="circle"></div>
+    </div>
+    <style>
+        .box2 {
+            position: relative;
+            height: 400px;
+            margin: 400px 0 200px;
+            background: lightgray;
+        }
+        .square {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 300px;
+            background: tomato;
+            opacity: 0;
+            animation-name: ani-square;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes ani-square {
+            0% {opacity: 0;top: 0;left: 0;}
+            10% {opacity: .7;top: 40%;left: 40%;}
+            90% {opacity: .7;top: 40%;left: 40%;}
+            100% {opacity: 0;top: 0;left: 0;}
+        }
+        .circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            border-radius: 50%;
+            opacity: 0;
+            animation-name: ani-circle;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-delay: .5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes ani-circle {
+            0% {opacity: 0;bottom: 0;right: 0;}
+            10% {opacity: .7;bottom: 40%;right: 40%;}
+            90% {opacity: .7;bottom: 40%;right: 40%;}
+            100% {opacity: 0;bottom: 0;right: 0;}
+        }
+    </style>
+    
+</body>
+</html>
