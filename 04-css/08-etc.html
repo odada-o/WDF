@@ -10,11 +10,49 @@
     <h1>tooltip</h1>
 
     <div class="tooltip-wrap">
-        tooltip 보기
-        <div class="tooltip-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        tooltip 보기 00000 <br>
+        tooltip 보기 00000  00000 00000
+        <div class="item top">top</div>
+        <div class="item bottom">bottom</div>
+        <div class="item left">left</div>
+        <div class="item right">right</div>
     </div>
 
     <style>
+        .right {
+            position: absolute;
+            top: 50%;
+            right: -60px;
+            transform: translateY(-50%);
+        }
+        .left {
+            position: absolute;
+            top: 50%;
+            left: -60px;
+            margin-top: -12px;
+        }
+        .bottom {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .top {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            margin-left: -25px; /* width 50px */
+        }
+        .top::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-width: 5px;
+            border-style: solid;
+            border-color: blue transparent transparent transparent;
+        }
+
         .tooltip-wrap {
             display: inline-block;
             position: relative;
@@ -24,22 +62,24 @@
             color: blue;
             background: greenyellow;
         }
-        .tooltip-item {
-            position: absolute;
-            bottom: -100px;
-            left: 50%;
+        .item {
             display: inline-block;
-            max-width: 100px;
-            padding: 5px 10px;
+            width: 50px;
+            padding: 5px 0;
             font-size: 12px;
             font-weight: normal;
             color: #fff;
-            background: #555;
+            background: red;
             border-radius: 5px;
-            transform: translateX(-50%);
+            opacity: 0.5;
+            text-align: center;
+            box-sizing: border-box;
+            /* transform: translateX(-50%); */
             /* word-break: break-all; */
         }
     </style>
-    
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 </body>
 </html>
