@@ -19,6 +19,36 @@
     </div>
 
     <style>
+        /* arrow */
+        .item::after {
+            content: '';
+            position: absolute;
+            border-width: 5px;
+            border-style: solid;
+            border-color: blue transparent transparent transparent;
+        }
+        .left::after {
+            top: 50%;
+            right: -10px;
+            transform: rotate(-90deg) translateX(50%);
+        }
+        .top::after {
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bottom::after {
+            top: -10px;
+            left: 50%;
+            transform: rotate(180deg) translateX(50%);
+        }
+        .right::after {
+            top: 50%;
+            left: -10px;
+            transform: rotate(90deg) translateX(-50%);
+        }
+
+
         .right {
             position: absolute;
             top: 50%;
@@ -43,15 +73,8 @@
             left: 50%;
             margin-left: -25px; /* width 50px */
         }
-        .top::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            border-width: 5px;
-            border-style: solid;
-            border-color: blue transparent transparent transparent;
-        }
+
+        
 
         .tooltip-wrap {
             display: inline-block;
