@@ -1,4 +1,16 @@
 @charset "UTF-8";
+:root {
+    --primary : #0060ff;
+    --line : #dbdbdb;
+    --txt : #222328;
+    --w : #fff;
+    --b : #111;
+
+    --widthWrap : 1200px;
+    --slideHeight : 300px;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +18,11 @@
     box-sizing: border-box;
     text-decoration: none;
     line-height: 1.5;
-    color: #222328;
+    color: var(--txt);
 }
 
 .wrap {
-    width: 1200px;
+    width: var(--widthWrap);
     margin: 0 auto;
 }
 .header {
@@ -46,10 +58,10 @@
 }
 .gnb .depth1 > li:hover > a {
     /* background: #0060ff; */
-    border-bottom: 5px solid #0060ff;
+    border-bottom: 5px solid var(--primary);
 }
 .gnb .depth1 > li:last-child .depth2 {
-    border-right: 1px solid #dbdbdb;
+    border-right: 1px solid var(--line);
 }
 /* gnb 마우스 오버 후 */
 .gnb .depth1:hover .depth2 {
@@ -71,8 +83,8 @@
     overflow: hidden;
     max-height: 0;
     /* padding: 0; */
-    background: #fff;
-    border-bottom: 0 solid #dbdbdb;
+    background: var(--w);
+    border-bottom: 0 solid var(--line);
     border-right: none;
     transition: all .3s;
 }
@@ -83,7 +95,7 @@
     right: 0;
     bottom: 5px;
     width: 1px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(var(--b),0.1);
 }
 .gnb .depth1 > li:last-child .depth2::after {
     display: none;
@@ -95,8 +107,8 @@
     line-height: 40px;
 }
 .gnb .depth2 a:hover {
-    background-color: #0060ff;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--w);
 }
 
 /* slide */
@@ -106,7 +118,7 @@
 .slide-wrap {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    height: var(--slideHeight);
 }
 .lst-slide {
     position: absolute;
