@@ -5,17 +5,89 @@
 // 공통요소 : header, footer, button, icon, box
 
 // 공통
-$hdWidth: 200px;
+$hdWidth: 190px;
 
 .wrap {
   display: flex;
   height: 100vh;
 }
 #header {
+  display: flex;
+  flex-direction: column;
   width: $hdWidth;
-  background: lightcyan;
+  padding: 40px 0;
+  background: $w;
 }
 #main {
   width: calc(100% - $hdWidth);
   background: lightpink;
+}
+
+#logo {
+  a {
+    display: block;
+    width: 150px;
+    height: 116px;
+    margin: 0 auto;
+    background: url(../../images/logo1.png) 0 0 / contain no-repeat;
+    text-indent: -9999px;
+  }
+}
+
+#gnb {
+  width: 100px;
+  margin: 70px auto 0;
+  .depth1 {
+    a {
+      display: block;
+      padding: 7px 20px;
+    }
+  }
+}
+
+.spot {
+  margin-top: auto;
+  .spot-g {
+    display: flex;
+    justify-content: center;
+    a {
+      display: block;
+      padding: 10px;
+    }
+  }
+  .contact {
+    a {
+      position: relative;
+      font-size: 12px;
+      &:first-child::before {
+        display: none;
+      }
+      &::before {
+        content: '';
+        @include posY;
+        left: 0;
+        width: 1px;
+        height: 10px;
+        background: red;
+      }
+    }
+  }
+  .sns {
+    a {
+      display: block;
+      width: 31px;
+      height: 29px;
+      padding: 0;
+      text-indent: -9999px;
+    }
+    .facebook {
+      background: url(../../images/sns3.png) 0 0 no-repeat;
+    }
+    .twitter {
+      background: url(../../images/sns4.png) 0 0 no-repeat;
+    }
+    .instagram {
+      background: url(../../images/sns5.png) 0 0 no-repeat;
+    }
+  }
 }

@@ -274,17 +274,90 @@ legend {
   content: "";
 }
 
+body {
+  background: url(../../1680.jpg) 0 0 no-repeat;
+}
+body .wrap {
+  opacity: 0.8;
+}
+
 .wrap {
   display: flex;
   height: 100vh;
 }
 
 #header {
-  width: 200px;
-  background: lightcyan;
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  padding: 40px 0;
+  background: #fff;
 }
 
 #main {
-  width: calc(100% - 200px);
+  width: calc(100% - 190px);
   background: lightpink;
+}
+
+#logo a {
+  display: block;
+  width: 150px;
+  height: 116px;
+  margin: 0 auto;
+  background: url(../../images/logo1.png) 0 0/contain no-repeat;
+  text-indent: -9999px;
+}
+
+#gnb {
+  width: 100px;
+  margin: 70px auto 0;
+}
+#gnb .depth1 a {
+  display: block;
+  padding: 7px 20px;
+}
+
+.spot {
+  margin-top: auto;
+}
+.spot .spot-g {
+  display: flex;
+  justify-content: center;
+}
+.spot .spot-g a {
+  display: block;
+  padding: 10px;
+}
+.spot .contact a {
+  position: relative;
+  font-size: 12px;
+}
+.spot .contact a:first-child::before {
+  display: none;
+}
+.spot .contact a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 1px;
+  height: 10px;
+  background: red;
+}
+.spot .sns a {
+  display: block;
+  width: 31px;
+  height: 29px;
+  padding: 0;
+  text-indent: -9999px;
+}
+.spot .sns .facebook {
+  background: url(../../images/sns3.png) 0 0 no-repeat;
+}
+.spot .sns .twitter {
+  background: url(../../images/sns4.png) 0 0 no-repeat;
+}
+.spot .sns .instagram {
+  background: url(../../images/sns5.png) 0 0 no-repeat;
 }/*# sourceMappingURL=comm.css.map */

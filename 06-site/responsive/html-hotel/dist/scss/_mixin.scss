@@ -28,8 +28,16 @@
   opacity: 1;
 }
 
-// 말줄임
+// 1줄 말줄임
 @mixin ell {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+// 2줄 말줄임
+@mixin ell2 {
   display: inline-block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -57,7 +65,7 @@
   padding-left: 12px;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 8px;
     left: 0;
@@ -68,7 +76,7 @@
 }
 
 @mixin ff-g {
-  font-family: "mGothic";
+  font-family: 'mGothic';
 }
 
 @mixin position($p: absolute, $t: null, $b: null, $l: null, $r: null) {
