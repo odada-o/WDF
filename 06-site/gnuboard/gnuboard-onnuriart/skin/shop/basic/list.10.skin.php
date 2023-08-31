@@ -128,7 +128,6 @@ foreach((array) $list as $row){
             echo "<h3>SNS 공유</h3>";
             echo get_sns_share_link('facebook', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/facebook.png');
             echo get_sns_share_link('twitter', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/twitter.png');
-            echo get_sns_share_link('googleplus', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/gplus.png');
             echo "<button type=\"button\" class=\"sct_sns_cls\"><span class=\"sound_only\">닫기</span><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>";
             echo "</div>\n";
         }
@@ -149,7 +148,7 @@ foreach((array) $list as $row){
 
 if ($i >= 1) echo "</ul>\n";
 
-if($i === 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
+if ($i === 0) echo "<p class=\"sct_noitem\">등록된 상품이 없습니다.</p>\n";
 ?>
 <!-- } 상품진열 10 끝 -->
 
@@ -160,7 +159,7 @@ $(function (){
 		$(this).parent("div").children(".sct_sns_wrap").show();
 	});
     $('.sct_sns_bg, .sct_sns_cls').click(function(){
-	    $('.sct_sns_wrap').hide();
+        $('.sct_sns_wrap').hide();
 	});
 });			
 </script>

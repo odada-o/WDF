@@ -2,19 +2,19 @@
 include_once('./_common.php');
 
 // 상품 리스트에서 다른 필드로 정렬을 하려면 아래의 배열 코드에서 해당 필드를 추가하세요.
-$sort = (isset($_REQUEST['sort']) && in_array($_REQUEST['sort'], array('it_sum_qty', 'it_price', 'it_use_avg', 'it_use_cnt', 'it_update_time'))) ? $_REQUEST['sort'] : '';
-$type = isset($_REQUEST['type']) ? preg_replace("/[\<\>\'\"\\\'\\\"\%\=\(\)\s]/", "", $_REQUEST['type']) : '';
+$sort = (isset($_REQUEST['sort']) && in_array($_REQUEST['sort'], array('it_name', 'it_sum_qty', 'it_price', 'it_use_avg', 'it_use_cnt', 'it_update_time'))) ? $_REQUEST['sort'] : '';
+$type = isset($_REQUEST['type']) ? (int) preg_replace("/[^0-9]/", "", $_REQUEST['type']) : 1;
 
 if (G5_IS_MOBILE) {
     include_once(G5_MSHOP_PATH.'/listtype.php');
     return;
 }
 
-if ($type == 1)      $g5['title'] = '히트상품';
-else if ($type == 2) $g5['title'] = '추천상품';
-else if ($type == 3) $g5['title'] = '최신상품';
-else if ($type == 4) $g5['title'] = '인기상품';
-else if ($type == 5) $g5['title'] = '할인상품';
+if ($type === 1)      $g5['title'] = '히트상품';
+else if ($type === 2) $g5['title'] = '추천상품';
+else if ($type === 3) $g5['title'] = '최신상품';
+else if ($type === 4) $g5['title'] = '인기상품';
+else if ($type === 5) $g5['title'] = '할인상품';
 else
     alert('상품유형이 아닙니다.');
 
@@ -34,7 +34,7 @@ if ($sort != '')
 else
     $order_by = 'it_order, it_id desc';
 
-$skin = isset($skin) ? $skin : '';
+$skin = isset($skin) ? strip_tags($skin) : '';
 if (!$skin || preg_match('#\.+[\\\/]#', $skin))
     $skin = $default['de_listtype_list_skin'];
 else
@@ -77,7 +77,7 @@ if (file_exists($list_file)) {
 }
 else
 {
-    echo '<div align="center">'.$skin.' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+    echo '<div align="center">'.get_text($skin).' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
 }
 
 $qstr .= '&amp;type='.$type.'&amp;sort='.$sort;

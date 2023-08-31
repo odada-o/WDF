@@ -6,7 +6,7 @@ Class G5_object_cache {
     public $contents = array();
     public $etcs = array();
 
-	function get($type, $key, $group ='default') {
+    function get($type, $key, $group ='default') {
 
         switch ($type) {
             case 'bbs':
@@ -28,10 +28,10 @@ Class G5_object_cache {
         }
 
         return false;
-	}
+    }
 
-	function exists($type, $key, $group = 'default' ) {
-        
+    function exists($type, $key, $group = 'default' ) {
+
         $return_data = '';
 
         switch ($type) {
@@ -47,9 +47,9 @@ Class G5_object_cache {
         }
 
         return isset($datas[$group]) && ( isset($datas[$group][$key]) || array_key_exists($key, $datas[$group]) );
-	}
+    }
 
-	function set($type, $key, $data=array(), $group='default') {
+    function set($type, $key, $data=array(), $group='default') {
         if ( is_object( $data ) )
             $data = clone $data;
 
@@ -61,29 +61,39 @@ Class G5_object_cache {
                 $this->contents[$group][$key] = $data;
                 break;
             default :
-                $datas = $this->etcs[$group][$key] = $data;
+                $this->etcs[$group][$key] = $data;
                 break;
         }
 
-	}
+    }
+    /**
+     * cache 데이터 제거
+     * @param string $type
+     * @param string $key
+     * @param string $group
+     * @return bool
+     * kkigomi 님이 고쳐주심
+     */
+    function delete($type, $key, $group = 'default')
+    {
+        if (!$this->exists($type, $key, $group)) {
+            return false;
+        }
 
-    function delete($key, $group='default') {
         switch ($type) {
             case 'bbs':
-                $datas = $this->writes;
+                $datas = &$this->writes;
                 break;
             case 'content':
-                $datas = $this->contents;
+                $datas = &$this->contents;
                 break;
-            default :
-                $datas = $this->etcs;
+            default:
+                $datas = &$this->etcs;
                 break;
         }
 
-        if ( ! $this->exists('bbs', $key, $group) )
-            return false;
+        unset($datas[$group][$key]);
 
-        unset( $datas[$group][$key] );
         return true;
     }
 

@@ -159,7 +159,25 @@ if( $cert_enc_use == "Y" )
                 alert_close("인증하신 정보로 가입된 회원정보가 없습니다.");
                 exit;
             }
+        }else{
+            $mb_dupinfo = $md5_ci;
         }
+        
+        $md5_cert_no = md5($cert_no);
+        $hash_data   = md5($user_name.$cert_type.$birth_day.$phone_no.$md5_cert_no);
+        
+        // 성인인증결과
+        $adult_day = date("Ymd", strtotime("-19 years", G5_SERVER_TIME));
+        $adult = ((int)$birth_day <= (int)$adult_day) ? 1 : 0;
+        
+        set_session("ss_cert_type",    $cert_type);
+        set_session("ss_cert_no",      $md5_cert_no);
+        set_session("ss_cert_hash",    $hash_data);
+        set_session("ss_cert_adult",   $adult);
+        set_session("ss_cert_birth",   $birth_day);
+        set_session("ss_cert_sex",     ($sex_code=="01"?"M":"F")); // 이니시스 간편인증은 성별정보 리턴 없음
+        set_session('ss_cert_dupinfo', $mb_dupinfo);
+        set_session('ss_cert_mb_id', $row['mb_id']);
     }
     else if( $res_cd != "0000" )
     {
@@ -193,14 +211,17 @@ $ct_cert->mf_clear();
         
         var $opener = window.opener;
         var is_mobile = false;        
-        $opener.name="parentPage";       
+        $opener.name="parentPage";
 
+        // 안드로이드 웹뷰에서 거의 다 새창을 지원하므로 더 이상 iframe 을 사용하지 않습니다.
+        /*
         if (typeof g5_is_mobile != "undefined" && g5_is_mobile ) {
             $opener = window.parent;
             is_mobile = true;
         } else {
             $opener = window.opener;
         }
+        */
         
         // up_hash 검증
         if( document.mbFindForm.up_hash.value != $opener.$("input[name=veri_up_hash]").val() ) {

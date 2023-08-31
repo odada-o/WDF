@@ -542,7 +542,7 @@ $od_b_addr1       = clean_xss_tags($od_b_addr1);
 $od_b_addr2       = clean_xss_tags($od_b_addr2);
 $od_b_addr3       = clean_xss_tags($od_b_addr3);
 $od_b_addr_jibeon = preg_match("/^(N|R)$/", $od_b_addr_jibeon) ? $od_b_addr_jibeon : '';
-$od_memo          = clean_xss_tags($od_memo);
+$od_memo          = clean_xss_tags($od_memo, 1, 1, 0, 0);
 $od_deposit_name  = clean_xss_tags($od_deposit_name);
 $od_tax_flag      = $default['de_tax_flag_use'];
 
@@ -646,10 +646,18 @@ $sql_card_point = "";
 if ($od_receipt_price > 0 && !$default['de_card_point']) {
     $sql_card_point = " , ct_point = '0' ";
 }
+
+// 회원 아이디 값 변경
+$sql_mb_id = "";
+if ($is_member) {
+    $sql_mb_id = " , mb_id = '{$member['mb_id']}' ";
+}
+
 $sql = "update {$g5['g5_shop_cart_table']}
            set od_id = '$od_id',
                ct_status = '$cart_status'
                $sql_card_point
+               $sql_mb_id
          where od_id = '$tmp_cart_id'
            and ct_select = '1' ";
 $result = sql_query($sql, false);

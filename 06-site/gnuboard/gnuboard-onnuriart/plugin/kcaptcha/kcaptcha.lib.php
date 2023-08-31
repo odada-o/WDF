@@ -18,6 +18,8 @@
 
 class KCAPTCHA{
 
+    private $keystring;
+
 	// generates keystring and image
 	function image(){
         require(dirname(__FILE__).'/kcaptcha_config.php');
@@ -171,10 +173,10 @@ class KCAPTCHA{
 				if($sx<0 || $sy<0 || $sx>=$width-1 || $sy>=$height-1){
 					continue;
 				}else{
-					$color=imagecolorat($img, $sx, $sy) & 0xFF;
-					$color_x=imagecolorat($img, $sx+1, $sy) & 0xFF;
-					$color_y=imagecolorat($img, $sx, $sy+1) & 0xFF;
-					$color_xy=imagecolorat($img, $sx+1, $sy+1) & 0xFF;
+					$color=imagecolorat($img, (int)$sx, (int)$sy) & 0xFF;
+					$color_x=imagecolorat($img, (int)$sx+1, (int)$sy) & 0xFF;
+					$color_y=imagecolorat($img, (int)$sx, (int)$sy+1) & 0xFF;
+					$color_xy=imagecolorat($img, (int)$sx+1, (int)$sy+1) & 0xFF;
 				}
 
 				if($color==255 && $color_x==255 && $color_y==255 && $color_xy==255){
@@ -204,7 +206,7 @@ class KCAPTCHA{
 					$newblue=$newcolor0*$foreground_color[2]+$newcolor*$background_color[2];
 				}
 
-				imagesetpixel($img2, $x, $y, imagecolorallocate($img2, $newred, $newgreen, $newblue));
+				imagesetpixel($img2, (int)$x, (int)$y, imagecolorallocate($img2, (int)$newred, (int)$newgreen, (int)$newblue));
 			}
 		}
 
@@ -274,9 +276,15 @@ function chk_captcha()
         return false;
     }
 
-    if (!isset($_POST['captcha_key'])) return false;
-    if (!trim($_POST['captcha_key'])) return false;
-    if ($_POST['captcha_key'] != get_session('ss_captcha_key')) {
+    $post_captcha_key = (isset($_POST['captcha_key']) && $_POST['captcha_key']) ? trim($_POST['captcha_key']) : '';
+    if (!trim($post_captcha_key)) return false;
+
+    if( $post_captcha_key && function_exists('get_string_encrypt') ){
+        $ip = md5(sha1($_SERVER['REMOTE_ADDR']));
+        $post_captcha_key = get_string_encrypt($ip.$post_captcha_key);
+    }
+
+    if ($post_captcha_key != get_session('ss_captcha_key')) {
         $_SESSION['ss_captcha_count'] = $captcha_count + 1;
         return false;
     }

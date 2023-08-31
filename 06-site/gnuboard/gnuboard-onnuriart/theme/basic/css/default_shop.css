@@ -504,7 +504,7 @@ box-shadow:0 1px 10px rgba(0,0,0,.1)}
 .new_win .new_win_con2 {margin:20px 0 0}
 .new_win .btn_confirm:after {display:block;visibility:hidden;clear:both;content:""}
 .new_win .win_btn {text-align:center;padding-bottom:30px}
-.new_win .btn_close {height:45px;width:60px;overflow:hidden;cursor:pointer}
+.new_win .btn_close {padding:0 20px;height:45px;overflow:hidden;cursor:pointer}
 .new_win .btn_submit {padding:0 20px;height:45px;font-weight:bold;font-size:1.083em}
 
 
@@ -743,7 +743,7 @@ box-shadow: 1px 2px 2px #eee;}
 #sod_frm_taker .tbl_frm01 .choice_place input[type="radio"] + label span {top:7px}
 #sod_frm_taker .tbl_frm01 .choice_place input,
 #sod_frm_taker .tbl_frm01 .choice_place label {margin-left:10px}
-#sod_frm_taker .tbl_frm01 .btn_frmline {width:80px;height:30px;line-height:28px;background:#fff;border:1px solid #d4d6db;color:#606060;text-align:center;float:right}
+#sod_frm_taker .tbl_frm01 .btn_frmline {padding:0;width:80px;height:30px;line-height:28px;background:#fff;border:1px solid #d4d6db;color:#606060;text-align:center;float:right}
 
 #sod_frm_taker .tbl_frm01 td input {width:100%}
 #sod_frm_taker .tbl_frm01 td .addr input {width:20%}
@@ -789,7 +789,7 @@ box-shadow: 1px 2px 2px #eee;}
 #od_tot_price strong{font-size:1.5em;color:#ff006c}
 #sod_frm #sod_frm_pt_alert {margin:5px 0;color:#38b2bb }
 #od_pay_sl h3{font-size:1.167em;margin:20px 0 5px}
-#od_pay_sl input[type="radio"]{position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left: 0;z-index: -1px;}
+#od_pay_sl input[type="radio"]{position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left: 0;z-index: -1;}
 #od_pay_sl .lb_icon {display: inline-block;float:left;width:50%;background:#fff;border:1px solid #eceff4;margin:-1px 0 0 -1px;cursor: pointer;height:60px;position:relative;padding-left:65px;padding-top:20px;z-index:1}
 #od_pay_sl input[type="radio"]:checked+.lb_icon {border:1px solid #ff006c;z-index:3}
 #sod_frm_paysel {}
@@ -1067,6 +1067,17 @@ a.btn_frmline.is-long-text{height:auto;width:160px}
 
 #sod_fin_dvr .dvr_link {color:#ff3061;text-decoration:underline}
 
+#sod_fin_tot {margin:10px 0}
+#sod_fin_tot h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#sod_fin_tot ul {margin:0;padding:0;list-style:none}
+#sod_fin_tot li {padding:10px;background:#38b2b9;border-bottom:1px solid #5ec2c7;color:#fff;zoom:1}
+#sod_fin_tot li:after {display:block;visibility:hidden;clear:both;content:""}
+#sod_fin_tot #alrdy {border-bottom:0 !important}
+#sod_fin_tot #alrdy .right{margin-top:10px;text-align:right;color:#f3f3f3;font-size:0.9em}
+#sod_fin_tot #alrdy .right p{position:relative}
+#sod_fin_tot #alrdy .right .title{position:absolute;left:0;padding-left:8px}
+#sod_fin_tot strong {float:right}
+
 #sod_fin_cancel {text-align:center}
 #sod_fin_cancel .sod_fin_c_btn {height:50px;border:1px solid #bababa;border-radius:3px;font-weight:bold;width:100%;background:none;color:#5e6b6f}
 #sod_fin_cancel .sod_fin_c_btn:hover {background:#fff}
@@ -1154,6 +1165,7 @@ a.btn_frmline.is-long-text{height:auto;width:160px}
 .sod_frm_mobile #m_sod_frm_paysel .inicis_lpay{background:url(../../../img/lpay_logo.png) no-repeat;width:35px;height:12px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
 .sod_frm_mobile #m_sod_frm_paysel .inicis_kakaopay{background:url(../../../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
 .sod_frm_mobile #m_sod_frm_paysel .kakaopay_icon{background:url(../../../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
+.sod_frm_mobile #m_sod_frm_paysel .applepay_icon{background:url(../../../img/ico-mobile-applepay.png) no-repeat 50% 50% #fff;border-radius:30px;height:23px;width:50px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
 .sod_frm_mobile #m_sod_frm_paysel .naverpay_icon{background:url(../../../img/ico-default-naverpay.png) no-repeat 50% 50% #fff;border-radius:30px;height:22px;width:50px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
 .sod_frm_mobile #m_sod_frm_paysel .samsung_pay{margin-left:-23px;background:url(../../../img/samsungpay.png) no-repeat 24px 3px;height:25px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
 .sod_frm_mobile #sod_frm_pay{border-top:1px solid #f3f3f3}

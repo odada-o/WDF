@@ -1521,9 +1521,6 @@ function get_sns_share_link($sns, $url, $title, $img)
         case 'twitter':
             $str = '<a href="https://twitter.com/share?url='.urlencode($url).'&amp;text='.urlencode($title).'" class="share-twitter" target="_blank"><img src="'.$img.'" alt="트위터에 공유"></a>';
             break;
-        case 'googleplus':
-            $str = '<a href="https://plus.google.com/share?url='.urlencode($url).'" class="share-googleplus" target="_blank"><img src="'.$img.'" alt="구글플러스에 공유"></a>';
-            break;
         case 'kakaotalk':
             if($config['cf_kakao_js_apikey'])
                 $str = '<a href="javascript:kakaolink_send(\''.str_replace('+', ' ', urlencode($title)).'\', \''.urlencode($url).'\');" class="share-kakaotalk"><img src="'.$img.'" alt="카카오톡 링크보내기"></a>';
@@ -1946,8 +1943,9 @@ function is_soldout($it_id, $is_cache=false)
     // 상품정보
     $it = get_shop_item($it_id, $is_cache);
 
-    if($it['it_soldout'] || $it['it_stock_qty'] <= 0)
+    if ($it['it_soldout']) {
         return true;
+    }
 
     $count = 0;
     $soldout = false;
@@ -1956,7 +1954,7 @@ function is_soldout($it_id, $is_cache=false)
     $sql = " select count(*) as cnt from {$g5['g5_shop_item_option_table']} where it_id = '$it_id' and io_type = '0' ";
     $row = sql_fetch($sql);
 
-    if($row['cnt']) {
+    if (isset($row['cnt']) && $row['cnt']) {
         $sql = " select io_id, io_type, io_stock_qty
                     from {$g5['g5_shop_item_option_table']}
                     where it_id = '$it_id'
@@ -1975,12 +1973,18 @@ function is_soldout($it_id, $is_cache=false)
         // 모든 선택옵션 품절이면 상품 품절
         if($i == $count)
             $soldout = true;
-    } else {
-        // 상품 재고수량
-        $stock_qty = get_it_stock_qty($it_id);
 
-        if($stock_qty <= 0)
+    } else {
+
+        if ($it['it_stock_qty'] <= 0) {
             $soldout = true;
+        } else {
+            // 상품 재고수량
+            $stock_qty = get_it_stock_qty($it_id);
+
+            if($stock_qty <= 0)
+                $soldout = true;
+        }
     }
     
     $cache[$key] = $soldout;
@@ -2628,10 +2632,10 @@ function make_order_field($data, $exclude)
 
         if(is_array($value)) {
             foreach($value as $k=>$v) {
-                $field .= '<input type="hidden" name="'.$key.'['.$k.']" value="'.$v.'">'.PHP_EOL;
+                $field .= '<input type="hidden" name="'.$key.'['.$k.']" value="'.get_text($v).'">'.PHP_EOL;
             }
         } else {
-            $field .= '<input type="hidden" name="'.$key.'" value="'.$value.'">'.PHP_EOL;
+            $field .= '<input type="hidden" name="'.$key.'" value="'.get_text($value).'">'.PHP_EOL;
         }
     }
 
@@ -2772,6 +2776,8 @@ function check_pay_name_replace($payname, $od=array(), $is_client=0){
                 return '네이버페이_NHNKCP'.$add_str;
             } else if( isset($od['od_other_pay_type']) && ($od['od_other_pay_type'] === 'OT13' || $od['od_other_pay_type'] === 'NHNKCP_KAKAOMONEY') ){
                 return '카카오페이_NHNKCP'.$add_str;
+            } else if( isset($od['od_other_pay_type']) && $od['od_other_pay_type'] === 'OT21' ){
+                return '애플페이_NHNKCP'.$add_str;
             }
 
             return 'PAYCO'.$add_str;

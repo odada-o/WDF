@@ -40,7 +40,7 @@ $(function() {
     });
 
     if(isAndroid) {
-        $(document).on("touchend", "select.it_option", function() {
+        $(document).on("touchend mouseup", "select.it_option", function() {
             option_add = true;
         });
     } else {
@@ -151,7 +151,7 @@ $(function() {
     });
 
     if(isAndroid) {
-        $(document).on("touchend", "select.it_supply", function() {
+        $(document).on("touchend mouseup", "select.it_supply", function() {
             supply_add = true;
         });
     } else {
@@ -480,7 +480,7 @@ function price_calculate()
         }
     });
 
-    $("#sit_tot_price").empty().html("<span>총 금액 :</span> "+number_format(String(total))+"원");
+    $("#sit_tot_price").empty().html("<span>총 금액 :</span><strong>"+number_format(String(total))+"</strong> 원");
 
     $("#sit_tot_price").trigger("price_calculate", [total]);
 }

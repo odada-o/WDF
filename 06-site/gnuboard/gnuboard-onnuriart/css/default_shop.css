@@ -270,8 +270,8 @@ box-shadow:0 2px 5px rgba(0,0,0,0.2)}
 #captcha {display:inline-block;position:relative}
 #captcha legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 #captcha #captcha_img {height:40px;border:1px solid #898989;vertical-align:top;padding:0;margin:0}
-#captcha #captcha_mp3 {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../img/captcha2.png') no-repeat;text-indent:-999px;border-radius:3px}
-#captcha #captcha_reload {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../img/captcha2.png') no-repeat 0 -40px;text-indent:-999px;border-radius:3px}
+#captcha #captcha_mp3 {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../../../img/captcha2.png') no-repeat;text-indent:-999px;border-radius:3px}
+#captcha #captcha_reload {margin:0;padding:0;width:40px;height:40px;border:0;background:transparent;vertical-align:middle;overflow:hidden;cursor:pointer;background:url('../../../img/captcha2.png') no-repeat 0 -40px;text-indent:-999px;border-radius:3px}
 #captcha #captcha_key {margin:0 0 0 3px;padding:0 5px;width:90px;height:40px;border:1px solid #ccc;background:#fff;font-size:1.333em;font-weight:bold;text-align:center;border-radius:3px;vertical-align:top}
 #captcha #captcha_info {display:block;margin:5px 0 0;font-size:0.95em;letter-spacing:-0.1em}
 
@@ -329,7 +329,7 @@ a.btn_close {text-align:center;line-height:50px}
 a.btn_cancel {display:inline-block;background:#969696;color:#fff;text-decoration:none;vertical-align:middle}
 button.btn_cancel {display:inline-block;background:#969696;color:#fff;text-decoration:none;vertical-align:middle}
 .btn_cancel:hover {background:#aaa}
-a.btn_frmline, button.btn_frmline {display:inline-block;padding:0 25px;height:40px;border:0;background:#434a54;border-radius:3px;color:#fff;text-decoration:none;vertical-align:top} /* 우편번호검색버튼 등 */
+a.btn_frmline, button.btn_frmline {display:inline-block;width:128px;padding:0 5px;height:40px;border:0;background:#434a54;border-radius:3px;color:#fff;text-decoration:none;vertical-align:top} /* 우편번호검색버튼 등 */
 a.btn_frmline {}
 button.btn_frmline {font-size:1em}
 a.btn_frmline {line-height:24px}
@@ -504,7 +504,7 @@ box-shadow:0 1px 10px rgba(0,0,0,.1)}
 .new_win .new_win_con2 {margin:20px 0 0}
 .new_win .btn_confirm:after {display:block;visibility:hidden;clear:both;content:""}
 .new_win .win_btn {text-align:center;padding-bottom:30px}
-.new_win .btn_close {padding:0 20px;height:45px;overflow:hidden;cursor:pointer}
+.new_win .btn_close {height:45px;width:60px;overflow:hidden;cursor:pointer}
 .new_win .btn_submit {padding:0 20px;height:45px;font-weight:bold;font-size:1.083em}
 
 
@@ -563,50 +563,42 @@ box-shadow:0 1px 10px rgba(0,0,0,.1)}
 #sit_rec_new .win_btn {margin:20px 0}
 
 /* 마이페이지 */
-#smb_my {position:relative}
+#smb_my {position:relative;margin-bottom:30px}
+#smb_my:after {display:block;visibility:hidden;clear:both;content:""}
 
-#smb_my_ov {margin:0 0 20px;position:relative}
+/* 마이페이지 aside */
+#smb_my_ov {position:relative;float:left;margin:0 10px 0 0;width:265px;border:1px solid #e8e8e8;background:#fff;margin-right:20px}
 #smb_my_ov h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#smb_my_ov .my_ov_name{display:block;background:#fff;border:1px solid #ccc;line-height:45px;padding:0 20px;font-size:1.167em;}
-#smb_my_ov .my_ov_name img{width:20px;border-radius:50%}
-#smb_my_act {position:absolute;top:-35px;right:0;zoom:1}
-#smb_my_act:after {display:block;visibility:hidden;clear:both;content:""}
-#smb_my_act ul {float:right;margin:0;padding:0;list-style:none}
-#smb_my_act li {float:left;margin:0 0 0 4px}
-#smb_my_act li a{line-height:25px;padding:0 5px}
-#smb_my_act li .btn_admin{height:27px;}
-#smb_my_ov .cou_pt{position:absolute;top:0 ;right:0;}
-#smb_my_ov .cou_pt dt{float:left;width:90px;line-height:45px;}
-#smb_my_ov .cou_pt dd{float:left;width:110px;text-align:right;padding:0 20px 0 0  ;line-height:45px;}
-#smb_my_ov .cou_pt dd a{color:#ff2b64;font-weight:bold;font-size:1.167em}
-#smb_my_ov .op_area{background:#fff;border:1px solid #ccc;border-top:0;padding:10px 15px;line-height:18px;color:#555}
-#smb_my_ov .btn_admin {display:inline-block;background:#d13f4a;color:#fff;text-decoration:none;vertical-align:middle;border-radius:3px}
+#smb_my_ov .smb_me {display:block;background:#fff;border-bottom:1px solid #e8e8e8;padding:20px;text-align:center;font-size:1.167em}
+#smb_my_ov .smb_me img {width:45px;border-radius:50%}
+#smb_my_ov .smb_me .my_ov_name {display:inline-block;margin-bottom:10px;line-height:28px}
+#smb_my_ov .smb_me a {display:inline-block;font-size:0.85em;height:28px;line-height:22px;border:1px solid #d5d9dd;color:#8a8a8a;border-radius:2px;padding:2px 5px}
+#smb_my_ov .smb_me a.smb_info {color:#3a8afd}
+
+#smb_private:after {display:block;visibility:hidden;clear:both;content:""}
+#smb_private {padding:10px 0}
+#smb_private li {text-align:left;position:relative;text-align:left}
+#smb_private a {display:block;background:#fff;color:#465168;line-height:20px;padding:10px 20px 10px 25px}
+#smb_private a strong {display:inline-block;float:right;max-width:87px;overflow:hidden;white-space:nowrap;text-overflow:clip;color:#3a8afd;padding:0 5px;border-radius:15px;font-size:0.92em}
+#smb_private a:hover strong {background:#4b8bff}
+#smb_private li a:hover {color:#4b8bff}
+#smb_private li a:hover:after {position:absolute;left:0;top:0;width:2px;height:100%;background:#3a8afd;content:""}
+#smb_private li i {width:25px;color:#8c9eb0;margin-right:5px}
+#smb_private li:hover i {color:#3a8afd}
+#smb_private .win_point strong {background:#37bc9b;color:#fff}
+#smb_private .win_memo strong {background:#ff8b77;color:#fff}
+#smb_private .win_scrap strong {background:#8cc152;color:#fff}
+#smb_private .win_coupon strong {background:#a352c1;color:#fff}
+
+#smb_my_ov h3 {font-size:1.2em;padding:20px 20px 10px;border-top:1px solid #e8e8e8}
+#smb_my_ov .op_area {border-top:0;padding:0 20px;line-height:18px;color:#555}
 #smb_my_ov .op_area:after {display:block;visibility:hidden;clear:both;content:""}
-#smb_my_ov .op_area dt{float:left;width:10%;margin:3px 0;font-weight:bold}
-#smb_my_ov .op_area dd{float:left;width:40%;;margin:3px 0}
-.my_ov_btn{text-align:center;}
-.my_ov_btn button{background:#fff;border:1px solid #ccc;vertical-align:top;border-top:0;padding:0 20px;height:25px}
-.my_ov_btn button:hover{background:#f3f3f3}
-
-#smb_my_ovaddd{width:90%}
-
+#smb_my_ov .op_area dt {margin:5px 0;padding-top:5px;font-weight:bold;color:#8c9eb0;line-height:20px}
+#smb_my_ov .op_area dd {margin:5px 0;padding-bottom:10px;border-bottom:1px dashed #e5e5e5}
 #smb_my_ovaddt {border-bottom:0 !important}
-#smb_my_ovaddd {width:590px !important;border-bottom:0 !important}
+#smb_my_ovaddd {border-bottom:0 !important}
 
-#smb_my_od {margin:0 0 50px;position:relative}
-#smb_my_od h2 {margin:0 0 10px;font-size:1.25em;}
-#smb_my_od  td{text-align:center}
-#smb_my_od  td a{font-weight:bold}
-#smb_my_wish{position:relative;}
-#smb_my_wish h2 {margin:0 0 10px;font-size:1.25em;padding:0 0 10px;border-bottom:2px solid #000}
-.smb_my_img{margin:0 0 5px;}
-.smb_my_tit{margin:5px 0 ; font-size:1.167em;font-weight:bold}
-.smb_my_date{font-size:0.92em;color:#777}
-.smb_my_more {position:absolute;top:0;right:0;}
-#smb_my_wish .list_02 .smb_my_img{float:none;margin:0}
-.smb_my_more a{display:block;background:url('../img/more-btn.gif') no-repeat 0 2px;padding-left:20px;height:30px}
-.smb_my_img a{display:block}
-.smb_my_img a img{max-width:100%;height:auto}
+.withdrawal {display:block;padding:10px 20px;border-top:1px solid #e8e8e8;color:#c7c7c7}
 
 /* 마이페이지 list */
 #smb_my_list {float:left;width:915px}
@@ -713,7 +705,6 @@ margin-top:-150px;border:1px solid #dde7e9;border-radius:3px;background:#fff;ove
 
 /* 주문서 작성 */
 #sod_frm {}
-#sod_frm:after {display:block;visibility:hidden;clear:both;content:""}
 #sod_frm p {margin:0 0 10px}
 #sod_frm .od_prd_list {margin-bottom:20px}
 #sod_list {position:relative}
@@ -760,7 +751,6 @@ box-shadow: 1px 2px 2px #eee;}
 #sod_frm_taker .tbl_frm01 td .ad_choice {padding:5px 0}
 #sod_frm_taker .tbl_frm01 td .ad_choice input {width:auto}
 
-/* 주문서 작성 - 공통 */
 #sod_frm_orderer, #sod_frm_taker {margin:0 0 30px;border:1px solid #e3e5e8;background:#fff}
 #sod_frm section h2 {border-bottom:1px solid #e2e4e7;font-size:1.167em;padding:20px}
 #sod_frm_orderer #od_addr_jibeon,
@@ -804,19 +794,19 @@ box-shadow: 1px 2px 2px #eee;}
 #od_pay_sl input[type="radio"]:checked+.lb_icon {border:1px solid #ff006c;z-index:3}
 #sod_frm_paysel {}
 #sod_frm_paysel legend {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#sod_frm_paysel .KPAY{background:url('../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .PAYNOW{background:url('../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .PAYCO{background:url('../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .inicis_lpay{background:url('../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .KPAY{background:url('../../../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .PAYNOW{background:url('../../../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .PAYCO{background:url('../../../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .inicis_lpay{background:url('../../../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
 #sod_frm_paysel .inicis_kakaopay{position:relative;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .inicis_kakaopay em{position:absolute;top:15px;left:45px;width:70px;height:30px;background:url('../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
-#sod_frm_paysel .kakaopay_icon{background:url('../img/kakao.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .naverpay_icon{background:url('../img/ico-default-naverpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#sod_frm_paysel .bank_icon{background:url('../img/pay_icon1.png') no-repeat 15px 50% #fff}
-#sod_frm_paysel .vbank_icon{background:url('../img/pay_icon2.png') no-repeat 15px 50% #fff;padding-top:13px}
-#sod_frm_paysel .iche_icon{background:url('../img/pay_icon2.png') no-repeat 15px 50% #fff;padding-top:13px}
-#sod_frm_paysel .hp_icon{background:url('../img/pay_icon3.png') no-repeat 24px 50% #fff}
-#sod_frm_paysel .card_icon{background:url('../img/pay_icon4.png') no-repeat 17px 50% #fff}
+#sod_frm_paysel .inicis_kakaopay em{position:absolute;top:15px;left:45px;width:70px;height:30px;background:url('../../../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
+#sod_frm_paysel .kakaopay_icon{background:url('../../../img/kakao.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .naverpay_icon{background:url('../../../img/ico-default-naverpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#sod_frm_paysel .bank_icon{background:url('../../../img/pay_icon1.png') no-repeat 15px 50% #fff}
+#sod_frm_paysel .vbank_icon{background:url('../../../img/pay_icon2.png') no-repeat 15px 50% #fff}
+#sod_frm_paysel .iche_icon{background:url('../../../img/pay_icon2.png') no-repeat 15px 50% #fff}
+#sod_frm_paysel .hp_icon{background:url('../../../img/pay_icon3.png') no-repeat 24px 50% #fff}
+#sod_frm_paysel .card_icon{background:url('../../../img/pay_icon4.png') no-repeat 17px 50% #fff}
 #forderform .sod_right #sod_bsk_tot {border:1px solid #e3e5e8}
 #forderform .od_pay_buttons_el{margin-top:20px;border:1px solid #e3e5e8;background:#fff;padding:10px}
 #forderform .od_pay_buttons_el h3{font-size:1.167em;margin:0px 0 5px}
@@ -890,7 +880,6 @@ box-shadow: 1px 2px 2px #eee;}
 */
 #sod_frm_pt .max_point_box em {font-style:normal !important}
 
-
 /* 주문서 작성 - 결제수단 */
 /* #sod_frm_pay {position:relative;margin:10px 0 0;background:#fff;border:1px solid #e3e5e8} */
 #sod_frm_pay {position:relative;margin:10px 0 0}
@@ -906,11 +895,11 @@ box-shadow: 1px 2px 2px #eee;}
 #sod_frm_paysel {}
 #sod_frm_paysel legend {position:absolute;font-size:0;line-height:0;overflow:hidden}
 /*
-#sod_frm_paysel .PAYCO {display:inline-block;width:75px;background:url('../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #fa1417}
-#sod_frm_paysel .PAYNOW {display:inline-block;width:75px;background:url('../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #c01734}
-#sod_frm_paysel .kakaopay_icon {display:inline-block;width:60px;background:url('../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
-#sod_frm_paysel .KPAY {display:inline-block;width:58px;background:url('../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #22096a}
-#sod_frm_paysel .inicis_lpay {display:inline-block;width:50px;background:url('../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #009bd7}
+#sod_frm_paysel .PAYCO {display:inline-block;width:75px;background:url('../../../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #fa1417}
+#sod_frm_paysel .PAYNOW {display:inline-block;width:75px;background:url('../../../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #c01734}
+#sod_frm_paysel .kakaopay_icon {display:inline-block;width:60px;background:url('../../../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
+#sod_frm_paysel .KPAY {display:inline-block;width:58px;background:url('../../../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #22096a}
+#sod_frm_paysel .inicis_lpay {display:inline-block;width:50px;background:url('../../../img/lpay_logo.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px;border:1px solid #009bd7}
 */
 #sod_frm_paysel ul.pay_way {margin:0;padding:15px}
 #sod_frm_paysel ul.pay_way input[type="radio"] + label span {top:7px}
@@ -950,7 +939,6 @@ box-shadow: 1px 2px 2px #eee;}
 #sod_frm #sod_frm_escrow h2 {margin:0;border:0}
 #sod_frm #sod_frm_escrow p {margin:5px 0}
 #display_pay_process {padding:20px;text-align:center}
-
 /* 위시리스트 */
 #sod_ws {}
 .sod_ws_img {width:90px;text-align:center}
@@ -998,21 +986,30 @@ box-shadow: 1px 2px 2px #eee;}
 
 /* 주문상세내역 */
 #sod_fin {}
-#sod_fin th{padding:8px}
-#sod_fin .th_line th{border-top:1px solid #ddd;}
 #sod_fin_no {margin:0 0 20px;padding:15px;border:1px solid #d6e2f4;background:#edf3fc;font-size:1.2em;border-radius:5px;color:#3a8afd}
+
 #sod_sts_wrap {margin:0 0 10px;text-align:right}
 #sod_sts_explan {display:none}
 
-#sod_fin_legend {padding:10px;background:#fff;margin:10px 0;border:1px solid #e9e9e9;text-align:left;zoom:1}
+#sod_fin_legend {padding:20px;line-height:20px;background:#fff;margin:10px 0;border:1px solid #e9e9e9;text-align:left}
 #sod_fin_legend:after {display:block;visibility:hidden;clear:both;content:''}
 #sod_fin_legend dt {clear:both;float:left;margin:0 0 5px;width:50px;font-weight:bold}
 #sod_fin_legend dd {float:left;margin:0}
 
-#sod_fin #sod_bsk_tot li{background:#fff;border-bottom:1px solid #e7ebf1;height: 40px;;padding:0 15px;line-height:40px;text-align:right}
-#sod_fin #sod_bsk_tot li span{float:left;clear:both;color: #777;}
-#sod_fin #sod_bsk_tot li strong{}
-#sod_fin #sod_bsk_tot .sod_bsk_cnt strong{color:#ff006c;font-size:1.25em}
+#sod_fin #sod_bsk_tot li {background:#fff;border-bottom:1px solid #e7ebf1;height:40px;padding:0 15px;line-height:40px;text-align:right}
+#sod_fin #sod_bsk_tot li span {float:left;clear:both;color:#777}
+#sod_fin #sod_bsk_tot li strong {}
+#sod_fin #sod_bsk_tot .sod_bsk_cnt strong {color:#ff006c;font-size:1.25em}
+
+#sod_bsk_tot2 {border:1px solid #3a8afd;margin-bottom:20px}
+#sod_bsk_tot2 li {background:#fff;padding:0 15px;line-height:40px;text-align:right}
+#sod_bsk_tot2 li span {float:left;clear:both;font-size:1em}
+#sod_bsk_tot2 li strong {font-size:1em}
+#sod_bsk_tot2 li.sod_fin_tot {background:#e5f0ff;border-top:1px solid #c6d7ef}
+#sod_bsk_tot2 li#alrdy {border-bottom:0 !important}
+#sod_bsk_tot2 li#alrdy div {padding:5px 0 15px;text-align:right}
+#sod_bsk_tot2 li#alrdy div p {position:relative;background:#d6e3f3;padding:0 10px;margin-bottom:1px}
+#sod_bsk_tot2 li.sod_fin_tot strong {color:#3a8afd;font-size:1.2em}
 
 #request_form {position:relative}
 #request_form div {display:none;z-index:10000;position:absolute;top:23px;left:0;padding:20px 0;width:520px;border:1px solid #000;background:#f2f5f9;text-align:center}
@@ -1036,45 +1033,54 @@ box-shadow: 1px 2px 2px #eee;}
 .sod_req_log_view .sod_req_it {width:270px}
 .sod_req_log_view button {margin:0;padding:0;border:0;background:transparent;color:#ff3061;text-decoration:underline;vertical-align:middle;cursor:pointer}
 
-#sod_fin_list h2 {margin:0 0 10px}
+#sod_fin_list h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#sod_fin_list .td_prd {border-left:0;position:relative;padding-left:90px;min-height:100px}
+#sod_fin_list .sod_img {position:absolute;top:25px;left:20px}
+#sod_fin_list .sod_name a {font-weight:bold;line-height:1.5em}
+#sod_fin_list .sod_name .sod_opt:before {content:"옵션";display:inline-block;margin:1px 5px 2px 0;padding:3px;border-radius:3px;background:#e2eaf6;line-height:1em;color:#3a8afd}
+#sod_fin_list #th_itst {width:80px}
 
-#sod_fin_list .td_bdno{border-left:0}
-#sod_fin_list .td_bdno a{font-weight:bold}
 #sod_fin_view {border:1px solid #e9e9e9}
 #sod_fin_view h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 #sod_fin_view h3 {margin:0 0 10px}
 #sod_fin_view .basic_tbl th {padding:0 10px;border-top:1px solid #eee;border-bottom:1px solid #eee;background:#f2f5f9;text-align:left}
 
-#sod_fin_pay {margin:0 0 30px}
-#sod_fin_orderer {margin:0 0 30px}
-#sod_fin_receiver {margin:0 0 30px;}
-#sod_fin_dvr {}
+#sod_fin_pay {margin:0 0 20px;background:#fff;border:1px solid #e3e5e8}
+#sod_fin_pay h3 {background:#fff;font-size:1.167em;padding:15px 20px;border-bottom:1px solid #e3e5e8}
+#sod_fin_pay ul {margin:0;padding:15px 20px}
+#sod_fin_pay li {line-height:24px;padding:5px 0}
+#sod_fin_pay li:after {display:block;visibility:hidden;clear:both;content:""}
+#sod_fin_pay li>span, #sod_fin_pay li>strong {display:inline-block;float:left}
+#sod_fin_pay li>strong {margin-right:10px;width:50px}
+#sod_fin_pay li>span {width:238px}
+#sod_fin_pay li .letter-2px{letter-spacing:-2px}
+a.btn_frmline.is-long-text{height:auto;width:160px}
+
+#sod_fin_orderer, #sod_fin_receiver, #sod_fin_dvr {margin:0 0 20px}
+#sod_fin_orderer .tbl_wrap, #sod_fin_receiver .tbl_wrap, #sod_fin_dvr .tbl_wrap {padding:20px}
+#sod_fin_dvr .tbl_wrap {padding:20px}
 #sod_fin .sod_left h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#sod_fin .sod_left h3 {background:#fff;font-size:1.167em;padding:15px 10px;border-top:1px solid #e3e5e8;border-bottom:0}
-#sod_fin .sod_left .tbl_head01 {}
-#sod_fin .sod_left th{padding:10px;border:0;border-top:1px solid #f3f3f3;text-align:left;width:100px;color:#666;background:#fff}
-#sod_fin .sod_left td{padding:10px;border:0;border-top:1px solid #f3f3f3;background:#fff}
+#sod_fin .sod_left h3 {background:#fff;font-size:1.167em;padding:15px 20px;border:1px solid #e3e5e8;border-bottom:0}
+#sod_fin .sod_left .tbl_head01 {background:#fff;border:1px solid #e3e5e8}
+#sod_fin .sod_left th {padding:10px 0;border:0;text-align:left;width:100px;color:#666;background:#fff}
+#sod_fin .sod_left td {padding:10px 0;border:0;background:#fff}
 
 #sod_fin_dvr .dvr_link {color:#ff3061;text-decoration:underline}
 
-#sod_fin_tot {margin:10px 0}
-#sod_fin_tot h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#sod_fin_tot ul {margin:0;padding:0;list-style:none}
-#sod_fin_tot li {padding:10px;background:#38b2b9;border-bottom:1px solid #5ec2c7;color:#fff;zoom:1}
-#sod_fin_tot li:after {display:block;visibility:hidden;clear:both;content:""}
-#sod_fin_tot #alrdy {border-bottom:0 !important}
-#sod_fin_tot #alrdy .right{margin-top:10px;text-align:right;color:#f3f3f3;font-size:0.9em}
-#sod_fin_tot #alrdy .right p{position:relative}
-#sod_fin_tot #alrdy .right .title{position:absolute;left:0;padding-left:8px}
-#sod_fin_tot strong {float:right}
-
 #sod_fin_cancel {text-align:center}
-#sod_fin_cancel h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#sod_fin_cancel button {height:40px;border:1px solid #5e6b6f;font-weight:bold;width:100%;background:none;color:#5e6b6f}
-#sod_fin_cancel button:hover{background:#fff}
-#sod_fin_cancelfrm {display:none;margin:10px 0 0;text-align:center;background:#fff;padding:15px}
-#sod_fin_cancelfrm .frm_input {background:#fff;margin: 0 0 5px;width:100%}
-#sod_fin_cancelfrm .btn_frmline{background:#5e6b6f;color:#fff;border:0;padding:10px;width:100%;cursor:pointer}
+#sod_fin_cancel .sod_fin_c_btn {height:50px;border:1px solid #bababa;border-radius:3px;font-weight:bold;width:100%;background:none;color:#5e6b6f}
+#sod_fin_cancel .sod_fin_c_btn:hover {background:#fff}
+#sod_fin_cancel h2 {padding:15px;border-bottom:1px solid #e8e8e8;text-align:left}
+#sod_fin_cancel p {text-align:center;background:#ffe0e0;border:2px solid #d50c0c;padding:15px;color:#d50c0c;font-size:1.167em;font-weight:bold}
+
+#sod_cancel_pop {display:none;width:100%;height:100%;position:fixed;top:0;left:0;z-index:999}
+#sod_fin_cancelfrm {position:absolute;top:50%;left:50%;background:#fff;text-align:center;width:245px;max-height:300px;margin-left:-125px;margin-top:-180px;overflow-y:auto;border-radius:5px;-webkit-box-shadow:1px 1px 18px rgba(0,0,0,0.2);-moz-box-shadow:1px 1px 18px rgba(0,0,0,0.2);box-shadow:1px 1px 18px rgba(0,0,0,0.2);border:1px solid #dde7e9;background:#fff;border-radius:3px}  
+#sod_fin_cancelfrm form {padding:20px}
+.sod_fin_bg {background:rgba(0,0,0,0.1);width:100%;height:100%}
+.sod_cls_btn {position:absolute;right:0;top:0;color:#b5b8bb;border:0;padding:12px 15px;font-size:16px;background:#fff}
+
+#sod_fin_cancelfrm .frm_input {background:#fff;margin:0 0 5px;width:100%}
+#sod_fin_cancelfrm .btn_frmline {background:#5e6b6f;color:#fff;border:0;padding:10px;width:100%;cursor:pointer}
 #sod_fin_test {padding:10px}
 
 /* 주문상세내역 중 현금영수증 발급 */
@@ -1142,13 +1148,14 @@ box-shadow: 1px 2px 2px #eee;}
 .sod_frm_mobile #m_sod_frm_paysel ul{margin:0;background:#fff;padding:10px;border:1px solid #e3e5e8}
 .sod_frm_mobile #m_sod_frm_paysel ul:after{display:block;visibility:hidden;clear:both;content:""}
 .sod_frm_mobile #m_sod_frm_paysel li{float:left;padding:5px;width:46%;height:25px}
-.sod_frm_mobile #m_sod_frm_paysel .KPAY{background:url(../img/kpay.png) no-repeat;width:37px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-.sod_frm_mobile #m_sod_frm_paysel .PAYNOW{background:url(../img/paynow.png) no-repeat;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-.sod_frm_mobile #m_sod_frm_paysel .PAYCO{background:url(../img/payco.png) no-repeat 1px;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-.sod_frm_mobile #m_sod_frm_paysel .inicis_lpay{background:url(../img/lpay_logo.png) no-repeat;width:35px;height:12px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
-.sod_frm_mobile #m_sod_frm_paysel .inicis_kakaopay{background:url(../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
-.sod_frm_mobile #m_sod_frm_paysel .kakaopay_icon{background:url(../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
-.sod_frm_mobile #m_sod_frm_paysel .samsung_pay{margin-left:-23px;background:url(../img/samsungpay.png) no-repeat 24px 3px;height:25px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
+.sod_frm_mobile #m_sod_frm_paysel .KPAY{background:url(../../../img/kpay.png) no-repeat;width:37px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+.sod_frm_mobile #m_sod_frm_paysel .PAYNOW{background:url(../../../img/paynow.png) no-repeat;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+.sod_frm_mobile #m_sod_frm_paysel .PAYCO{background:url(../../../img/payco.png) no-repeat 1px;width:46px;height:15px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+.sod_frm_mobile #m_sod_frm_paysel .inicis_lpay{background:url(../../../img/lpay_logo.png) no-repeat;width:35px;height:12px;overflow:hidden;text-indent:-999px;display:inline-block;background-size:100%}
+.sod_frm_mobile #m_sod_frm_paysel .inicis_kakaopay{background:url(../../../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
+.sod_frm_mobile #m_sod_frm_paysel .kakaopay_icon{background:url(../../../img/kakao.png) no-repeat 50% 50% #f4dc34;border-radius:30px;height:22px;width:74px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
+.sod_frm_mobile #m_sod_frm_paysel .naverpay_icon{background:url(../../../img/ico-default-naverpay.png) no-repeat 50% 50% #fff;border-radius:30px;height:22px;width:50px;display:inline-block;overflow:hidden;text-indent:-999px;background-size:35px auto}
+.sod_frm_mobile #m_sod_frm_paysel .samsung_pay{margin-left:-23px;background:url(../../../img/samsungpay.png) no-repeat 24px 3px;height:25px;width:106px;display:inline-block;overflow:hidden;text-indent:-999px}
 .sod_frm_mobile #sod_frm_pay{border-top:1px solid #f3f3f3}
 .sod_frm_mobile #sod_frm_pay h2{margin:10px 0;font-size:1.25em}
 .sod_frm_mobile #sod_frm_pay .cp_btn1,.sod_frm_mobile #sod_frm_pay .cp_cancel1{margin-top:0}
@@ -1249,10 +1256,10 @@ html.no-overflowscrolling #sc_coupon_frm, html.no-overflowscrolling #od_coupon_f
 #personal_pay input[type="radio"]:checked+.lb_icon {z-index:3}
 
 #personal_pay legend {position:absolute;font-size:0;line-height:0;overflow:hidden}
-#personal_pay .KPAY {width:58px;background:url('../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
-#personal_pay .PAYNOW {width:75px;background:url('../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px}
-#personal_pay .PAYCO {width:75px;background:url('../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px}
-#personal_pay .kakaopay_icon {width:60px;background:url('../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
+#personal_pay .KPAY {width:58px;background:url('../../../img/kpay.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px}
+#personal_pay .PAYNOW {width:75px;background:url('../../../img/paynow.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px}
+#personal_pay .PAYCO {width:75px;background:url('../../../img/payco.png') no-repeat 50% 50% #fff;overflow:hidden;text-indent:-999px;border-radius:30px}
+#personal_pay .kakaopay_icon {width:60px;background:url('../../../img/kakao.png') no-repeat 50% 50% #ffeb00;overflow:hidden;text-indent:-999px;border-radius:30px}
 #personal_pay .pay_way {border-bottom:1px solid #e2e4e7}
 #personal_pay #display_pay_button {border:0}
 

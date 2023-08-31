@@ -1,63 +1,62 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
-if(defined('G5_THEME_PATH')) {
-    require_once(G5_THEME_PATH.'/tail.php');
+if (G5_IS_MOBILE) {
+    include_once(G5_THEME_MOBILE_PATH.'/tail.php');
     return;
 }
 
-if (G5_IS_MOBILE) {
-    include_once(G5_MOBILE_PATH.'/tail.php');
+if(G5_COMMUNITY_USE === false) {
+    include_once(G5_THEME_SHOP_PATH.'/shop.tail.php');
     return;
 }
 ?>
 
-    </div>
-    <div id="aside">
-        <?php echo outlogin(); // 외부 로그인, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-        <?php echo poll(); // 설문조사, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-    </div>
+    
 </div>
 
 </div>
-<!-- } 콘텐츠 끝 -->
+<!-- 콘텐츠 끝 -->
 
 <hr>
 
-<!-- 하단 시작 { -->
+<!-- 하단 시작 -->
 <div id="ft">
 
     <div id="ft_wr">
         <div id="ft_link" class="ft_cnt">
-            <a href="<?php echo get_pretty_url('content', 'company'); ?>">회사소개</a>
-            <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a>
+            <a href="<?php echo get_pretty_url('content', 'about'); ?>">단체소개</a>
+            <a href="<?php echo get_pretty_url('content', 'facility'); ?>">단체활동</a>
             <a href="<?php echo get_pretty_url('content', 'provision'); ?>">서비스이용약관</a>
-            <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
+            <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a>
+            <!-- <a href="<?php echo get_device_change_url(); ?>">모바일버전</a> -->
         </div>
-        <div id="ft_company" class="ft_cnt">
-        	<h2>사이트 정보</h2>
-	        <p class="ft_info">
-	        	회사명 : 회사명 / 대표 : 대표자명<br>
-				주소  : OO도 OO시 OO구 OO동 123-45<br>
-				사업자 등록번호  : 123-45-67890<br>
-				전화 :  02-123-4567  팩스  : 02-123-4568<br>
-				통신판매업신고번호 :  제 OO구 - 123호<br>
-				개인정보관리책임자 :  정보책임자명<br>
-			</p>
-	    </div>
-        <?php
-        //공지사항
-        // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-        // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-        // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-        echo latest('notice', 'notice', 4, 13);
-        ?>
+        <address id="ft_company" class="ft_cnt">
+        	<h2 class="blind">사이트 정보</h2>
+	        <ul class="ft_info">
+                <li class="company">온누리국악예술인협동조합</li>
+                <li>Tel. 054-371-1533 </li>
+                <li>E-mail. <a href="mailto:onnuri1533@naver.com">onnuri1533@naver.com</a> </li>
+                <li class="add">Address. 경상북도 청도군 화양읍 연지로 152</li>
+			</ul>
+	    </address>
 
-        <?php echo visit(); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-    </div>
-    <!-- <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div> -->
-    <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div>
-
+        <div id="ft_copy">Copyright &copy; <b> ⓒ 2021 온누리국악예술인협동조합</b> All rights reserved.</div>
+        <div id="ft_sns">
+            <h2 class="blind">SNS 바로가기</h2>
+            <ul class="lst_sns">
+                <li class="youtube"><a href="https://www.youtube.com/channel/UCsLc1f8gzpyQZbYGKAJD4GQ" title="새창열림" target="_blank">유튜브</a></li>
+                <li class="instagram"><a href="https://www.instagram.com/onnuri1533/" title="새창열림" target="_blank">인스타그램</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/onnuri1533/?hc_ref=ARSgKzdKCmD5eQCEPxNZByOpxmYRkc36fnwjFzFlaWnKXTJ2foY-6LIjIEwAcmFFCIg&fref=nf&__tn__=kC-R" title="새창열림" target="_blank">페이스북</a></li>
+                <li class="blog"><a href="https://blog.naver.com/onnuri1533" title="새창열림" target="_blank">블로그</a></li>
+                <li class="kakao"><a href="https://pf.kakao.com/_XxeiST" title="새창열림" target="_blank">카카오톡</a></li>
+            </ul>
+        </div>
+	</div>      
+        <!-- <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div> -->
+        
+    
+    
     <button type="button" id="top_btn">
     	<i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
     </button>

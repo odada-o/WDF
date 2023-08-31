@@ -43,7 +43,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 <meta charset="utf-8">
 <?php
 if (G5_IS_MOBILE) {
-    echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL;
+    echo '<meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL;
     echo '<meta name="HandheldFriendly" content="true">'.PHP_EOL;
     echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
 } else {
@@ -54,7 +54,23 @@ if (G5_IS_MOBILE) {
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="온누리국악예술인협동조합" />
+<meta name="description" content="온누리국악예술인협동조합" />
+<!-- <meta name="google-site-verification" content="IAFqMKrFL_oI-6qEK5RLdIQIgLSI2Tm4BioBI8KstoA" />
+<meta name="naver-site-verification" content="c92584d9c1fb2f16b436d9f4b31eb4b7f58903f4" /> -->
+<meta property="og:type" content="온누리국악예술인협동조합"> 
+<meta property="og:title" content="온누리국악예술인협동조합">
+<meta property="og:description" content="온누리국악예술인협동조합 사이트입니다.">
+<meta property="og:image" content="./images/slide-main1.jpg">
+<meta property="og:url" content="https://onnuriart.com/">
+<meta name="twitter:card" content="온누리국악예술인협동조합">
+<meta name="twitter:title" content="온누리국악예술인협동조합">
+<meta name="twitter:description" content="온누리국악예술인협동조합 사이트입니다.">
+<meta name="twitter:image" content="https://onnuriart.com/images/slide-main1.jpg">
+<meta name="twitter:domain" content="온누리국악예술인협동조합">
 <title><?php echo $g5_head_title; ?></title>
+<!-- admin.css / mobile.css / default.css -> comm.css -->
 <?php
 if (defined('G5_IS_ADMIN')) {
     if(!defined('_THEME_PREVIEW_'))
@@ -62,7 +78,7 @@ if (defined('G5_IS_ADMIN')) {
 } else {
     $shop_css = '';
     if (defined('_SHOP_')) $shop_css = '_shop';
-    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
+    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'comm').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
 }
 ?>
 <!--[if lte IE 8]>

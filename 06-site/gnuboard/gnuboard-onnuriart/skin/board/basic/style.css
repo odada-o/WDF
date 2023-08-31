@@ -3,7 +3,8 @@
 /* 게시판 목록 */
 #bo_list {
     position: relative;
-    margin-bottom: 20px;
+    max-width: 1280px;
+    margin: 0 auto 20px;
     padding: 20px 0;
 }
 #bo_list:after {

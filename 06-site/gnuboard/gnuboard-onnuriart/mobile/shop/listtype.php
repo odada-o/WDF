@@ -1,12 +1,12 @@
 <?php
 include_once('./_common.php');
 
-$type = isset($_REQUEST['type']) ? preg_replace("/[\<\>\'\"\\\'\\\"\%\=\(\)\s]/", "", $_REQUEST['type']) : '';
-if ($type == 1)      $g5['title'] = '히트상품';
-else if ($type == 2) $g5['title'] = '추천상품';
-else if ($type == 3) $g5['title'] = '최신상품';
-else if ($type == 4) $g5['title'] = '인기상품';
-else if ($type == 5) $g5['title'] = '세일상품';
+$type = isset($_REQUEST['type']) ? (int) preg_replace("/[^0-9]/", "", $_REQUEST['type']) : 1;
+if ($type === 1)      $g5['title'] = '히트상품';
+else if ($type === 2) $g5['title'] = '추천상품';
+else if ($type === 3) $g5['title'] = '최신상품';
+else if ($type === 4) $g5['title'] = '인기상품';
+else if ($type === 5) $g5['title'] = '세일상품';
 else
     alert('상품유형이 아닙니다.');
 
@@ -32,7 +32,7 @@ else
 if (!$skin)
     $skin = $default['de_mobile_listtype_list_skin'];
 else
-    $skin = preg_replace('#\.+[\\\/]#', '', $skin);
+    $skin = preg_replace('#\.+[\\\/]#', '', strip_tags($skin));
 
 define('G5_SHOP_CSS_URL', G5_MSHOP_SKIN_URL);
 
@@ -65,7 +65,7 @@ if (file_exists($list_file)) {
 }
 else
 {
-    echo '<div align="center">'.$skin.' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
+    echo '<div align="center">'.get_text($skin).' 파일을 찾을 수 없습니다.<br>관리자에게 알려주시면 감사하겠습니다.</div>';
 }
 ?>
 </div>

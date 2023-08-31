@@ -29,13 +29,13 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         if ($is_notice) {
             $option .= PHP_EOL.'<li class="chk_box"><input type="checkbox" id="notice" name="notice"  class="selec_chk" value="1" '.$notice_checked.'>'.PHP_EOL.'<label for="notice"><span></span>공지</label></li>';
         }
-        // if ($is_html) {
-        //     if ($is_dhtml_editor) {
-        //         $option_hidden .= '<input type="hidden" value="html1" name="html">';
-        //     } else {
-        //         $option .= PHP_EOL.'<li class="chk_box"><input type="checkbox" id="html" name="html" onclick="html_auto_br(this);" class="selec_chk" value="'.$html_value.'" '.$html_checked.'>'.PHP_EOL.'<label for="html"><span></span>html</label></li>';
-        //     }
-        // }
+        if ($is_html) {
+            if ($is_dhtml_editor) {
+                $option_hidden .= '<input type="hidden" value="html1" name="html">';
+            } else {
+                $option .= PHP_EOL.'<li class="chk_box"><input type="checkbox" id="html" name="html" onclick="html_auto_br(this);" class="selec_chk" value="'.$html_value.'" '.$html_checked.'>'.PHP_EOL.'<label for="html"><span></span>html</label></li>';
+            }
+        }
         if ($is_secret) {
             if ($is_admin || $is_secret==1) {
                 $option .= PHP_EOL.'<li class="chk_box"><input type="checkbox" id="secret" name="secret"  class="selec_chk" value="secret" '.$secret_checked.'>'.PHP_EOL.'<label for="secret"><span></span>비밀글</label></li>';
@@ -78,8 +78,8 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 	    
 	
 	    <?php if ($is_homepage) { ?>
-	        <label for="wr_homepage" class="sound_only">연락처</label>
-	        <input type="text" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" class="frm_input half_input" size="50" placeholder="연락처">
+	        <label for="wr_homepage" class="sound_only">홈페이지</label>
+	        <input type="text" name="wr_homepage" value="<?php echo $homepage ?>" id="wr_homepage" class="frm_input half_input" size="50" placeholder="홈페이지">
 	    <?php } ?>
 	</div>
 	
@@ -154,6 +154,11 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
 
 
+    <?php if ($is_use_captcha) { //자동등록방지  ?>
+    <div class="write_div">
+        <?php echo $captcha_html ?>
+    </div>
+    <?php } ?>
 
     <div class="btn_confirm write_div">
         <a href="<?php echo get_pretty_url($bo_table); ?>" class="btn_cancel btn">취소</a>
@@ -239,6 +244,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             }
         }
 
+        <?php echo $captcha_js; // 캡챠 사용시 자바스크립트에서 입력된 캡챠를 검사함  ?>
 
         document.getElementById("btn_submit").disabled = "disabled";
 

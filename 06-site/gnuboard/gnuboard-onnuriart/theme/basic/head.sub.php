@@ -37,7 +37,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 <meta charset="utf-8">
 <?php
 if (G5_IS_MOBILE) {
-    echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">'.PHP_EOL;
+    echo '<meta name="viewport" id="meta_viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10">'.PHP_EOL;
     echo '<meta name="HandheldFriendly" content="true">'.PHP_EOL;
     echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
 } else {
@@ -48,22 +48,6 @@ if (G5_IS_MOBILE) {
 if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="온누리국악예술인협동조합" />
-<meta name="description" content="온누리국악예술인협동조합" />
-<!-- <meta name="google-site-verification" content="IAFqMKrFL_oI-6qEK5RLdIQIgLSI2Tm4BioBI8KstoA" />
-<meta name="naver-site-verification" content="c92584d9c1fb2f16b436d9f4b31eb4b7f58903f4" /> -->
-<meta property="og:type" content="온누리국악예술인협동조합"> 
-<meta property="og:title" content="온누리국악예술인협동조합">
-<meta property="og:description" content="온누리국악예술인협동조합 사이트입니다.">
-<meta property="og:image" content="./images/slide-main1.jpg">
-<meta property="og:url" content="https://onnuriart.com/">
-<meta name="twitter:card" content="온누리국악예술인협동조합">
-<meta name="twitter:title" content="온누리국악예술인협동조합">
-<meta name="twitter:description" content="온누리국악예술인협동조합 사이트입니다.">
-<meta name="twitter:image" content="https://onnuriart.com/images/slide-main1.jpg">
-<meta name="twitter:domain" content="온누리국악예술인협동조합">
-
 <title><?php echo $g5_head_title; ?></title>
 <?php
 $shop_css = '';
@@ -125,4 +109,3 @@ if ($is_member) { // 회원이라면 로그인 중이라는 메세지를 출력�
     echo '<div id="hd_login_msg">'.$sr_admin_msg.get_text($member['mb_nick']).'님 로그인 중 ';
     echo '<a href="'.G5_BBS_URL.'/logout.php">로그아웃</a></div>';
 }
-

@@ -218,7 +218,6 @@
 .sct_10 .sct_sns a {display:inline-block;border-radius:50%;width:50px;height:50px;line-height:25px;text-align:center;padding:10px 0;margin:20px 5px}
 .sct_10 .sct_sns .share-facebook {background:#415b92}
 .sct_10 .sct_sns .share-twitter {background:#35b3dc}
-.sct_10 .sct_sns .share-googleplus {background:#ea3838}
 .sct_10 .sct_sns img {width:24px}
 .sct_10 .sct_sns_bg {background:rgba(0,0,0,0.1);width:100%;height:100%}
 .sct_10 .sct_sns_cls {position:absolute;right:0;top:0;color:#b5b8bb;border:0;padding:12px 15px;font-size:16px;background:#fff}
@@ -266,7 +265,7 @@
 .sct_40 .sct_a:focus, .sct_40 .sct_a:hover {text-decoration:none}
 
 .sct_40 .sct_img {text-align:center;float:left;margin-right:20px}
-.sct_40 .sct_img a {display:block}
+.sct_40 .sct_img a {display:block;position:relative;z-index: 9999;}
 .sct_40 .sct_cart {position:absolute;right:0;bottom:0;border:0;width:150px;padding:15px 0;background:#000;background:rgba(0,0,0,0.5);color:#fff;font-size:1em;font-weight:bold;z-index:99999}
 .sct_40 .list-10-btn .sct_cart{z-index:1;top:40px;right:10px;bottom:initial;padding:8px 0;width:140px;border:1px solid #1c70e9;background:#3a8afd;color:#fff;cursor:pointer;border-radius:3px}
 .sct_40 .list-10-btn .sct_cart:hover {background:#2375eb}
@@ -291,7 +290,6 @@
 .sct_40 .sct_sns a {display:inline-block;border-radius:50%;width:50px;height:50px;line-height:25px;text-align:center;padding:10px 0;margin:20px 5px}
 .sct_40 .sct_sns .share-facebook {background:#415b92}
 .sct_40 .sct_sns .share-twitter {background:#35b3dc}
-.sct_40 .sct_sns .share-googleplus {background:#ea3838}
 .sct_40 .sct_sns img {width:24px}
 .sct_40 .sct_sns_bg {background:rgba(0,0,0,0.1);width:100%;height:100%}
 .sct_40 .sct_sns_cls {position:absolute;right:0;top:0;color:#b5b8bb;border:0;padding:12px 15px;font-size:16px;background:#fff}
@@ -346,7 +344,6 @@
 .smt_10 .sct_sns a {display:inline-block;border-radius:50%;width:50px;height:50px;line-height:25px;text-align:center;padding:10px 0;margin:20px 5px}
 .smt_10 .sct_sns .share-facebook {background:#415b92}
 .smt_10 .sct_sns .share-twitter {background:#35b3dc}
-.smt_10 .sct_sns .share-googleplus {background:#ea3838}
 .smt_10 .sct_sns img {width:24px}
 .smt_10 .sct_sns_bg {background:rgba(0,0,0,0.1);width:100%;height:100%}
 .smt_10 .sct_sns_cls {position:absolute;right:0;top:0;color:#b5b8bb;border:0;padding:12px 15px;font-size:16px;background:#fff}
@@ -354,7 +351,7 @@
 .smt_10 .sct_op_btn {position:absolute;right:5px;bottom:0}
 .smt_10 .sct_op_btn>button {border:0;width:25px;height:20px;font-size:1.25em;text-align:center;color:#949494;background:transparent}
 
-.sct_cartop_wr {position:absolute;top:0;left:0;z-index:3;width:100%;height:100%;padding:10px;text-align:left;background:rgba(0,0,0,0.5);opacity:0.98}
+.sct_cartop_wr {position:absolute;top:0;left:0;z-index:9999;width:100%;height:100%;padding:10px;text-align:left;background:rgba(0,0,0,0.5);opacity:0.98}
 .sct_cartop_wr .it_option {width:100%;height:35px;margin-bottom:5px;}
 .sct_cartop_wr .cartopt_cart_btn {width:100%;border:1px solid #1c70e9;padding:8px 5px;margin-bottom:5px;background:#3a8afd;color:#fff;border-radius:3px}
 .sct_cartop_wr .cartopt_close_btn {width:100%;border:1px solid #1c70e9;padding:8px 5px;background:#fff;color:#1c70e9;border-radius:3px}
@@ -381,7 +378,6 @@
 .smt_20 .sct_sns a {display:inline-block;border-radius:50%;width:30px;height:30px;line-height:28px;margin-right:5px;text-align:center}
 .smt_20 .sct_sns .share-facebook {background:#415b92}
 .smt_20 .sct_sns .share-twitter {background:#35b3dc}
-.smt_20 .sct_sns .share-googleplus {background:#ea3838}
 .smt_20 .sct_sns img {width:20px}
 
 .smt_20 .sct_icon {margin:0 0 10px}
@@ -559,7 +555,6 @@
 #sit_star_sns .sns_area a {display:inline-block;width:35px;height:35px;line-height:35px;margin-bottom:5px;background:#eee;text-align:center;border-radius:50%}
 #sit_star_sns .sns_area a img {width:24px;height:auto}
 #sit_star_sns .sns_area #sit_btn_rec {font-size:15px}
-#sit_star_sns .sns_area .share-googleplus {background:#ea3838}
 #sit_star_sns .sns_area .share-facebook {background:#415b92}
 #sit_star_sns .sns_area .share-twitter {background:#35b3dc}
 

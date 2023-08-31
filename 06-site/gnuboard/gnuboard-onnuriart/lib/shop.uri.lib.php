@@ -138,10 +138,11 @@ function shop_short_url_clean($string_url, $url, $page_name, $array_page_names){
             $add_param = '?'.http_build_query($result,'','&amp;');
         }
 
-        if( $add_qry ){
+        if( isset($add_qry) ){
             $add_param .= $add_param ? '&amp;'.$add_qry : '?'.$add_qry;
         }
 
+        $return_url = '';
         foreach($s as $k => $v) { $return_url .= '/'.$v; }
 
         return $host.$return_url.$add_param.$fragment;

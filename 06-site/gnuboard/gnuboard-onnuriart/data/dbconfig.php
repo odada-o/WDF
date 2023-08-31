@@ -1,12 +1,14 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 define('G5_MYSQL_HOST', 'localhost');
-define('G5_MYSQL_USER', 'oddoddodd');
+define('G5_MYSQL_USER', 'eehd80');
 define('G5_MYSQL_PASSWORD', 'tkddlfch78**');
-define('G5_MYSQL_DB', 'oddoddodd');
+define('G5_MYSQL_DB', 'eehd80');
 define('G5_MYSQL_SET_MODE', true);
 
-define('G5_TABLE_PREFIX', 'art_');
+define('G5_TABLE_PREFIX', 'g5_');
+
+define('G5_TOKEN_ENCRYPTION_KEY', '4148366630345a524c753937456d7767'); // 토큰 암호화에 사용할 키
 
 $g5['write_prefix'] = G5_TABLE_PREFIX.'write_'; // 게시판 테이블명 접두사
 

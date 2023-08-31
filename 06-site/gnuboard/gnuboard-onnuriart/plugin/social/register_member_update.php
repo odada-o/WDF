@@ -122,7 +122,7 @@ if($config['cf_cert_use']) {
             $sql_certify .= " , mb_certify  = '{$cert_type}' ";
             $sql_certify .= " , mb_adult = '".get_session('ss_cert_adult')."' ";
             $sql_certify .= " , mb_birth = '".get_session('ss_cert_birth')."' ";
-            $sql_certify .= " , mb_sex = '".get_session+('ss_cert_sex')."' ";
+            $sql_certify .= " , mb_sex = '".get_session('ss_cert_sex')."' ";
             $sql_certify .= " , mb_dupinfo = '".get_session('ss_cert_dupinfo')."' ";
             if($w == 'u')
                 $sql_certify .= " , mb_name = '{$mb_name}' ";
@@ -226,6 +226,7 @@ if($result) {
 
         //바로 로그인 처리
         set_session('ss_mb_id', $mb['mb_id']);
+        if(function_exists('update_auth_session_token')) update_auth_session_token(G5_TIME_YMDHIS);
 
     } else {    // 메일인증을 사용한다면
         $subject = '['.$config['cf_title'].'] 인증확인 메일입니다.';

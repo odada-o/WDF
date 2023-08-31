@@ -9,7 +9,7 @@ add_javascript('<script src="'.G5_JS_URL.'/shop.list.action.js"></script>', 10);
 ?>
 
 <?php if(!defined('G5_IS_SHOP_AJAX_LIST') && $config['cf_kakao_js_apikey']) { ?>
-<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js" async></script>
 <script src="<?php echo G5_JS_URL; ?>/kakaolink.js"></script>
 <script>
     // 사용할 앱의 Javascript 키를 설정해 주세요.
@@ -116,7 +116,6 @@ foreach((array) $list as $row){
             echo "<h3>SNS 공유</h3>";
             echo get_sns_share_link('facebook', $sns_url, $sns_title, G5_MSHOP_SKIN_URL.'/img/facebook.png');
             echo get_sns_share_link('twitter', $sns_url, $sns_title, G5_MSHOP_SKIN_URL.'/img/twitter.png');
-            echo get_sns_share_link('googleplus', $sns_url, $sns_title, G5_MSHOP_SKIN_URL.'/img/gplus.png');
             echo get_sns_share_link('kakaotalk', $sns_url, $sns_title, G5_MSHOP_SKIN_URL.'/img/sns_kakao.png');
             echo "<button type=\"button\" class=\"sct_sns_cls\"><span class=\"sound_only\">닫기</span><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>";
             echo "</div>\n";

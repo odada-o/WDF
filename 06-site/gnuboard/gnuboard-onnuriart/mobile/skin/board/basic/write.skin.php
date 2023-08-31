@@ -140,7 +140,12 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
         </div>
         <?php } ?>
 
-        
+        <?php if ($is_use_captcha) { //자동등록방지 ?>
+        <div class="write_div">
+            <span class="sound_only">자동등록방지</span>
+            <?php echo $captcha_html ?>
+        </div>
+        <?php } ?>
     </div>
 
     <div class="btn_confirm">

@@ -134,7 +134,7 @@ if ($is_admin) {
 <!-- 상품 상세보기 시작 { -->
 <?php
 // 상단 HTML
-echo '<div id="sit_hhtml">'.conv_content($it['it_head_html'], 1).'</div>';
+echo run_replace('shop_it_head_html', '<div id="sit_hhtml">'.conv_content($it['it_head_html'], 1).'</div>', $it);
 
 // 보안서버경로
 if (G5_HTTPS_DOMAIN)
@@ -194,7 +194,6 @@ $sns_title = get_text($it['it_name']).' | '.get_text($config['cf_title']);
 $sns_url  = shop_item_url($it['it_id']);
 $sns_share_links = get_sns_share_link('facebook', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/facebook.png').' ';
 $sns_share_links .= get_sns_share_link('twitter', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/twitter.png').' ';
-$sns_share_links .= get_sns_share_link('googleplus', $sns_url, $sns_title, G5_SHOP_SKIN_URL.'/img/gplus.png');
 
 // 상품품절체크
 if(G5_SOLDOUT_CHECK)
@@ -253,7 +252,7 @@ include_once(G5_SHOP_PATH.'/settle_naverpay.inc.php');
 ?>
 
 <?php if($is_orderable) { ?>
-<script src="<?php echo G5_JS_URL; ?>/shop.js"></script>
+<script src="<?php echo G5_JS_URL; ?>/shop.js?ver=<?php echo G5_JS_VER; ?>"></script>
 <?php } ?>
 
 <div id="sit">
@@ -275,7 +274,7 @@ include_once(G5_SHOP_PATH.'/settle_naverpay.inc.php');
 
 <?php
 // 하단 HTML
-echo conv_content($it['it_tail_html'], 1);
+echo run_replace('shop_it_tail_html', conv_content($it['it_tail_html'], 1), $it);
 ?>
 
 <?php

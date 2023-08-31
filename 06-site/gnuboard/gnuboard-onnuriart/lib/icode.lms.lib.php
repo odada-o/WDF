@@ -28,14 +28,14 @@ function get_icode_port_type($id, $pw)
 * 접속, 발송, URL발송, 결과등의 실질적으로 쓰이는 모든 부분이 포함되어 있다.
 */
 class LMS {
-	var $icode_id;
-	var $icode_pw;
-	var $socket_host;
-	var $socket_port;
-	var $socket_portcode;
-	var $Data = array();
-	var $Result = array();
-    var $icode_key;
+	public $icode_id;
+	public $icode_pw;
+    public $socket_host;
+    public $socket_port;
+    public $socket_portcode;
+    public $Data = array();
+    public $Result = array();
+    public $icode_key;
 
 	// SMS 서버 접속
 	function SMS_con($host, $id, $pw, $portcode) {
@@ -195,6 +195,7 @@ class LMS {
 
             foreach($this->Data as $puts) {
                 fputs($fsocket, $puts);
+                $gets = '';
                 while(!$gets) { $gets = fgets($fsocket,32); }
                 $json = json_decode(substr($puts,6), true);
 
@@ -206,7 +207,6 @@ class LMS {
                     $this->Result[$dest] = $dest.":Error(".substr($gets,6,2).")";
                     if(substr($gets,6,2) >= "80") break;
                 }
-                $gets = "";
             }
 
             fclose($fsocket);
@@ -217,6 +217,7 @@ class LMS {
 
             foreach($this->Data as $puts) {
                 fputs($fsocket, $puts);
+                $gets = '';
                 while(!$gets) { $gets = fgets($fsocket,30); }
                 $dest = substr($puts,26,11);
                 if (substr($gets,0,19) == "0223  00".$dest) {
@@ -224,7 +225,6 @@ class LMS {
                 } else {
                     $this->Result[$dest] = $dest.":Error(".substr($gets,6,2).")";
                 }
-                $gets = "";
             }
 
             fclose($fsocket);
@@ -327,7 +327,7 @@ function is_vaild_callback($callback){
 function CheckCommonTypeDate($strDate) {
 	$strDate = preg_replace("/[^0-9]/", "", $strDate);
 	if ($strDate){
-		if (!checkdate(substr($strDate,4,2),substr($strDate,6,2),substr($rsvTime,0,4)))
+		if (!checkdate(substr($strDate,4,2),substr($strDate,6,2),substr($strDate,0,4)))
 		return "예약날짜오류";
 		if (substr($strDate,8,2)>23 || substr($strDate,10,2)>59) return false;
 		return "예약날짜오류";

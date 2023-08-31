@@ -303,6 +303,7 @@ CREATE TABLE IF NOT EXISTS `g5_config` (
   `cf_icode_pw` varchar(255) NOT NULL DEFAULT '',  
   `cf_icode_server_ip` varchar(50) NOT NULL DEFAULT '',
   `cf_icode_server_port` varchar(50) NOT NULL DEFAULT '',
+  `cf_icode_token_key` varchar(100) NOT NULL DEFAULT '',
   `cf_googl_shorturl_apikey` varchar(50) NOT NULL DEFAULT '',
   `cf_social_login_use` tinyint(4) NOT NULL DEFAULT '0',
   `cf_social_servicelist` varchar(255) NOT NULL DEFAULT '',
@@ -616,6 +617,7 @@ CREATE TABLE IF NOT EXISTS `g5_poll` (
   `po_date` date NOT NULL default '0000-00-00',
   `po_ips` mediumtext NOT NULL,
   `mb_ids` text NOT NULL,
+  `po_use` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`po_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
 
