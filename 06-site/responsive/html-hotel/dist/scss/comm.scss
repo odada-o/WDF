@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import 'variables', 'mixin', 'reset';
+
+// comm.scss(css) -
+// 공통요소 : header, footer, button, icon, box
+
+// 공통
+$hdWidth: 200px;
+
+.wrap {
+  display: flex;
+  height: 100vh;
+}
+#header {
+  width: $hdWidth;
+  background: lightcyan;
+}
+#main {
+  width: calc(100% - $hdWidth);
+  background: lightpink;
+}
