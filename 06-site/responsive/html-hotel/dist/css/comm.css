@@ -373,8 +373,13 @@ legend {
 }
 
 .box-g {
+  overflow: hidden;
   position: relative;
   height: 100%;
+  padding: 30px 20px;
+}
+.box-g strong {
+  text-transform: capitalize;
 }
 .box-g .tit-big {
   position: absolute;
@@ -398,9 +403,27 @@ legend {
 }
 
 .box-3 {
-  background: rgba(255, 202, 0, 0.8);
+  background: #c6f6fa;
+}
+.box-3::after {
+  content: "\f2f9";
+  position: absolute;
+  bottom: -39px;
+  right: -9px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 100px;
+  animation: fa-spin 2s infinite linear;
 }
 
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .box-4 {
   background: rgba(255, 202, 0, 0.7);
 }

@@ -111,8 +111,13 @@ $utilHeight: 40px;
 }
 
 .box-g {
+  overflow: hidden;
   position: relative;
   height: 100%;
+  padding: 30px 20px;
+  strong {
+    text-transform: capitalize;
+  }
   .tit-big {
     position: absolute;
     bottom: -32px;
@@ -133,7 +138,25 @@ $utilHeight: 40px;
   background: pink;
 }
 .box-3 {
-  background: rgba($prim1, 0.8);
+  background: #c6f6fa;
+  &::after {
+    content: '\f2f9';
+    position: absolute;
+    bottom: -39px;
+    right: -9px;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 100px;
+    animation: fa-spin 2s infinite linear;
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .box-4 {
   background: rgba($prim1, 0.7);
