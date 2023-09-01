@@ -6,8 +6,10 @@
 
 // 공통
 $hdWidth: 190px;
+$utilHeight: 40px;
 
 .wrap {
+  position: relative;
   display: flex;
   height: 100vh;
 }
@@ -20,7 +22,7 @@ $hdWidth: 190px;
 }
 #main {
   width: calc(100% - $hdWidth);
-  background: lightpink;
+  padding-top: 40px;
 }
 
 #logo {
@@ -90,4 +92,63 @@ $hdWidth: 190px;
       background: url(../../images/sns5.png) 0 0 no-repeat;
     }
   }
+}
+
+.util {
+  position: absolute;
+  top: 0;
+  left: $hdWidth;
+  right: 0;
+  height: 40px;
+  background: $b;
+}
+
+.grid {
+  width: 1090px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 195px);
+}
+
+.box-g {
+  height: 100%;
+  background: red;
+}
+.box-1 {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  background: blue;
+}
+.box-2 {
+  grid-column: 4 / span 2;
+  background: pink;
+}
+.box-3 {
+  background: rgba($prim1, 0.8);
+}
+.box-4 {
+  background: rgba($prim1, 0.7);
+}
+.box-5 {
+  background: rgba($prim1, 0.6);
+}
+.box-6 {
+  grid-column: 2 / span 2;
+  background: rgba($prim1, 0.5);
+}
+.box-7 {
+  background: rgba($prim1, 0.4);
+}
+.box-8 {
+  background: rgba($prim1, 0.3);
+}
+.box-9 {
+  grid-column: 1 / span 2;
+  background: rgba($prim1, 0.2);
+}
+.box-10 {
+  background: rgba($prim1, 1);
+}
+.box-11 {
+  background: rgba($prim1, 0.9);
 }

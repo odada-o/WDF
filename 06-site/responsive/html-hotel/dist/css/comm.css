@@ -282,6 +282,7 @@ body .wrap {
 }
 
 .wrap {
+  position: relative;
   display: flex;
   height: 100vh;
 }
@@ -296,7 +297,7 @@ body .wrap {
 
 #main {
   width: calc(100% - 190px);
-  background: lightpink;
+  padding-top: 40px;
 }
 
 #logo a {
@@ -360,4 +361,74 @@ body .wrap {
 }
 .spot .sns .instagram {
   background: url(../../images/sns5.png) 0 0 no-repeat;
+}
+
+.util {
+  position: absolute;
+  top: 0;
+  left: 190px;
+  right: 0;
+  height: 40px;
+  background: #000;
+}
+
+.grid {
+  width: 1090px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 195px);
+}
+
+.box-g {
+  height: 100%;
+  background: red;
+}
+
+.box-1 {
+  grid-column: 1/span 3;
+  grid-row: 1/span 2;
+  background: blue;
+}
+
+.box-2 {
+  grid-column: 4/span 2;
+  background: pink;
+}
+
+.box-3 {
+  background: rgba(255, 202, 0, 0.8);
+}
+
+.box-4 {
+  background: rgba(255, 202, 0, 0.7);
+}
+
+.box-5 {
+  background: rgba(255, 202, 0, 0.6);
+}
+
+.box-6 {
+  grid-column: 2/span 2;
+  background: rgba(255, 202, 0, 0.5);
+}
+
+.box-7 {
+  background: rgba(255, 202, 0, 0.4);
+}
+
+.box-8 {
+  background: rgba(255, 202, 0, 0.3);
+}
+
+.box-9 {
+  grid-column: 1/span 2;
+  background: rgba(255, 202, 0, 0.2);
+}
+
+.box-10 {
+  background: #ffca00;
+}
+
+.box-11 {
+  background: rgba(255, 202, 0, 0.9);
 }/*# sourceMappingURL=comm.css.map */
