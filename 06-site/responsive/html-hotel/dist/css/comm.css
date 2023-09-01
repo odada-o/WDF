@@ -274,13 +274,6 @@ legend {
   content: "";
 }
 
-body {
-  background: url(../../1680.jpg) 0 0 no-repeat;
-}
-body .wrap {
-  opacity: 0.8;
-}
-
 .wrap {
   position: relative;
   display: flex;
@@ -373,21 +366,30 @@ body .wrap {
 }
 
 .grid {
-  width: 1090px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 195px);
+  grid-template-rows: repeat(4, 1fr);
+  height: calc(100vh - 40px);
 }
 
 .box-g {
+  position: relative;
   height: 100%;
-  background: red;
+}
+.box-g .tit-big {
+  position: absolute;
+  bottom: -32px;
+  right: -1px;
+  font-size: 100px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -3px;
 }
 
 .box-1 {
   grid-column: 1/span 3;
   grid-row: 1/span 2;
-  background: blue;
+  background: url(../../images/pic1.jpg) 50% 50%/cover no-repeat;
 }
 
 .box-2 {
