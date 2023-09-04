@@ -33,6 +33,7 @@ $utilHeight: 40px;
   #header {
     display: block;
     width: 100%;
+    padding: 0;
     background: lightblue;
     .inner {
       display: flex;
@@ -120,11 +121,20 @@ $utilHeight: 40px;
   background: $b;
 }
 @media screen and (max-width: 1440px) {
+  #logo a {
+    width: 250px;
+    height: 50px;
+    background: url(../../images/logo2.png) 0 0 no-repeat;
+  }
   #gnb {
     width: auto;
     margin: 0;
     .depth1 {
       display: flex;
+      a {
+        height: 103px;
+        line-height: 103px;
+      }
     }
   }
   .spot {
