@@ -29,7 +29,10 @@ button,
 header,
 main,
 footer,
-article {
+article,
+section,
+a,
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -235,9 +238,9 @@ legend {
   content: '';
 }
 
-body {
-  background: url(../../1599.jpg) 0 0 no-repeat;
-  .wrap {
-    opacity: 0.8;
-  }
-}
+// body {
+//   background: url(../../1599.jpg) 0 0 no-repeat;
+//   .wrap {
+//     opacity: 0.8;
+//   }
+// }

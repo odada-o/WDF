@@ -13,13 +13,17 @@ $utilHeight: 40px;
   position: relative;
   display: flex;
   height: 100vh;
+  transition: all 0.3s;
 }
 #header {
-  display: flex;
-  flex-direction: column;
   width: $hdWidth;
   padding: 40px 0;
   background: $w;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }
 #main {
   width: calc(100% - $hdWidth);
@@ -34,11 +38,14 @@ $utilHeight: 40px;
     display: block;
     width: 100%;
     padding: 0;
-    background: lightblue;
     .inner {
       display: flex;
       justify-content: space-between;
     }
+  }
+  #main {
+    width: 100%;
+    padding-top: 0;
   }
 }
 
@@ -121,10 +128,13 @@ $utilHeight: 40px;
   background: $b;
 }
 @media screen and (max-width: 1440px) {
-  #logo a {
-    width: 250px;
-    height: 50px;
-    background: url(../../images/logo2.png) 0 0 no-repeat;
+  #logo {
+    padding: 30px 0 0 25px;
+    a {
+      width: 250px;
+      height: 50px;
+      background: url(../../images/logo2.png) 0 0 no-repeat;
+    }
   }
   #gnb {
     width: auto;
@@ -133,6 +143,7 @@ $utilHeight: 40px;
       display: flex;
       a {
         height: 103px;
+        padding: 0 37px;
         line-height: 103px;
       }
     }
@@ -142,6 +153,7 @@ $utilHeight: 40px;
   }
   .util {
     position: static;
+    height: 50px;
   }
 }
 
@@ -227,4 +239,10 @@ $utilHeight: 40px;
 }
 .box-11 {
   background: rgba($prim1, 0.9);
+}
+
+@media screen and (max-width: 1440px) {
+  .grid {
+    height: calc(100vh - 153px);
+  }
 }
