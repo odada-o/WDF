@@ -40,6 +40,7 @@ $utilHeight: 40px;
     padding: 0;
     .inner {
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
     }
   }
@@ -244,5 +245,33 @@ $utilHeight: 40px;
 @media screen and (max-width: 1440px) {
   .grid {
     height: calc(100vh - 153px);
+  }
+}
+@media screen and (max-width: 1280px) {
+  .grid {
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .box-g {
+    height: 233px;
+  }
+  .box-1 {
+    height: auto;
+  }
+  .box-2 {
+    grid-column: auto;
+  }
+  .box-6 {
+    grid-column: 3 / span 2;
+  }
+  .box-7 {
+    grid-column: 1 / span 2;
+  }
+  .box-9 {
+    grid-column: 4 / span 1;
+  }
+  .box-10 {
+    grid-column: 1 / span 2;
   }
 }
