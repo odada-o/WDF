@@ -608,4 +608,56 @@ legend {
   .box-9 {
     grid-column: 3/span 1;
   }
+}
+@media screen and (max-width: 744px) {
+  #header {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+  }
+  #header .inner {
+    display: block;
+  }
+  #logo {
+    margin-bottom: 50px;
+    padding-left: 0;
+  }
+  #logo a {
+    width: 150px;
+    height: 116px;
+    background: url(../../images/logo1.png) 0 0/contain no-repeat;
+  }
+  #gnb .depth1 {
+    display: block;
+  }
+  #gnb .depth1 a {
+    width: 60%;
+    max-width: 300px;
+    height: 48px;
+    margin: 0 auto;
+    line-height: 48px;
+    margin-bottom: 10px;
+    background: rgba(255, 0, 0, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+  }
+  .util {
+    display: none;
+  }
+  .grid {
+    display: block;
+  }
+  .box-g {
+    display: none;
+  }
+  .box-1 {
+    display: block;
+    height: 100vh;
+  }
+  .box-1 .tit-big {
+    display: none;
+  }
 }/*# sourceMappingURL=comm.css.map */

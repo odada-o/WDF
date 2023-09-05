@@ -315,3 +315,56 @@ $utilHeight: 40px;
     grid-column: 3 / span 1;
   }
 }
+
+@media screen and (max-width: 744px) {
+  #header {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+    background: transparent;
+    .inner {
+      display: block;
+    }
+  }
+  #logo {
+    margin-bottom: 50px;
+    padding-left: 0;
+    a {
+      width: 150px;
+      height: 116px;
+      background: url(../../images/logo1.png) 0 0 / contain no-repeat;
+    }
+  }
+  #gnb .depth1 {
+    display: block;
+    a {
+      width: 60%;
+      max-width: 300px;
+      height: 48px;
+      margin: 0 auto;
+      line-height: 48px;
+      margin-bottom: 10px;
+      background: rgba(red, 0.7);
+      border-radius: 10px;
+      color: $w;
+      text-align: center;
+    }
+  }
+  .util {
+    display: none;
+  }
+  .grid {
+    display: block;
+  }
+  .box-g {
+    display: none;
+  }
+  .box-1 {
+    display: block;
+    height: 100vh;
+    .tit-big {
+      display: none;
+    }
+  }
+}
