@@ -1,0 +1,510 @@
+@import url("./reset.css");
+/* clearfix */
+#skipnavigation a {
+  position: absolute;
+  left: -3000%;
+}
+
+#skipnavigation a:focus {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: blue;
+  color: #fff;
+  text-align: center;
+}
+
+.wrap {
+  position: relative;
+  padding-left: 200px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  padding: 30px 20px;
+  background: #fff;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+header h1 a {
+  display: block;
+  width: 150px;
+  height: 100px;
+  background: url(../../images/logo1.png) 50% 50% no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+}
+
+header #gnb {
+  width: 80%;
+  margin: 70px auto 0;
+}
+
+header #gnb li {
+  margin-bottom: 10px;
+}
+
+header #gnb a {
+  font-size: 16px;
+}
+
+header #gnb i {
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: -2px;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+header .sns {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+}
+
+header .sns a {
+  display: inline-block;
+  position: relative;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+header .sns a:first-child:after {
+  position: absolute;
+  top: 5px;
+  right: -3px;
+  width: 1px;
+  height: 12px;
+  background: #777;
+  content: '';
+}
+
+header .sns .link-txt {
+  text-align: center;
+}
+
+header .sns i {
+  font-size: 25px;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+  height: 50px;
+  padding: 0 10px;
+  background: #000;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+nav * {
+  color: #fff;
+}
+
+nav .col-l {
+  float: left;
+}
+
+nav .col-r {
+  float: right;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 50px;
+}
+
+nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+article {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 20%;
+  height: 25%;
+  padding: 30px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+article h2 {
+  margin-bottom: 5px;
+  font-size: 1.375em;
+}
+
+article:first-child {
+  width: 60%;
+  height: 50%;
+  background: url(../../images/pic1.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:first-child h2 {
+  position: absolute;
+  bottom: -2.6vw;
+  right: -0.6vw;
+  font-size: 11vw;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+article:nth-child(2) {
+  width: 40%;
+  background: #fff;
+}
+
+article:nth-child(3) {
+  background: #c6f6fa;
+}
+
+article:nth-child(3) i {
+  position: absolute;
+  bottom: -4vw;
+  right: -3vw;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16vw;
+  -webkit-animation: rotate- 1s infinite;
+          animation: rotate- 1s infinite;
+}
+
+@-webkit-keyframes rotate- {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+}
+
+@keyframes rotate- {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(365deg);
+            transform: rotate(365deg);
+  }
+}
+
+article:nth-child(4) {
+  background: url(../../images/pic2.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:nth-child(5) {
+  background: url(../../images/pic3.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:nth-child(6) {
+  width: 40%;
+  background: #fff;
+}
+
+article:nth-child(7) {
+  background: url(../../images/pic4.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:nth-child(8) {
+  background: #fff;
+}
+
+article:nth-child(9) {
+  width: 40%;
+  background: url(../../images/pic5.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:nth-child(10) {
+  background: url(../../images/pic6.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+article:nth-child(11) {
+  background: #e6f5fc;
+}
+
+article:nth-child(12) {
+  background: url(../../images/pic7.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width: 1599px) {
+  .wrap {
+    height: 100vh;
+    padding-left: 0;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: static;
+    width: 100%;
+    padding: 5px 20px 5px 10px;
+  }
+  header h1 a {
+    width: 200px;
+    height: 60px;
+    background: url(../../images/logo2.png) 50% 50% no-repeat;
+    background-size: contain;
+  }
+  header #gnb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 400px;
+    margin: 0;
+  }
+  header #gnb li {
+    margin-bottom: 0;
+  }
+  header #gnb a {
+    display: block;
+    height: 100%;
+  }
+  nav {
+    position: static;
+    height: 40px;
+  }
+  nav a {
+    line-height: 40px;
+  }
+  .container {
+    height: auto;
+    padding-top: 0;
+  }
+  article {
+    height: 250px;
+  }
+  article:first-child {
+    height: 500px;
+  }
+  header .sns {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrap {
+    height: auto;
+  }
+  .container {
+    overflow: hidden;
+  }
+  article {
+    width: 25%;
+    height: 200px;
+  }
+  article:first-child {
+    width: 75%;
+    height: 400px;
+  }
+  article:nth-child(2) {
+    width: 25%;
+    height: 200px;
+  }
+  article:nth-child(6) {
+    width: 50%;
+  }
+  article:nth-child(7) {
+    width: 50%;
+  }
+  article:nth-child(9) {
+    width: 25%;
+  }
+  article:nth-child(10) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  article {
+    width: 33.333%;
+  }
+  article:first-child {
+    width: 100%;
+    height: 400px;
+  }
+  article:first-child h2 {
+    bottom: -5.2vw;
+    font-size: 20vw;
+  }
+  article:nth-child(2) {
+    width: 66.666%;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  article:nth-child(2):after {
+    background-image: url(../../images/pic2.jpg);
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-size: 100%;
+    background-position: 50% 50%;
+    opacity: 0.5 !important;
+    filter: alpha(opacity=50);
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+  article:nth-child(4) {
+    display: none;
+  }
+  article:nth-child(5) {
+    width: 33.333%;
+  }
+  article:nth-child(6) {
+    width: 66.666%;
+  }
+  article:nth-child(7) {
+    display: none;
+  }
+  article:nth-child(9) {
+    width: 33.333%;
+  }
+  article:nth-child(10) {
+    display: none;
+  }
+  article:nth-child(12) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  article {
+    width: 50%;
+  }
+  article:nth-child(2) {
+    width: 100%;
+  }
+  article:nth-child(3) i {
+    bottom: -8vw;
+    right: -7vw;
+    font-size: 35vw;
+  }
+  article:nth-child(8) {
+    background: #f1f1f1;
+  }
+  article:nth-child(n+3) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  header {
+    display: block;
+    padding: 10px 0 10px 0;
+  }
+  header h1 {
+    border-bottom: 1px solid #eee;
+  }
+  header h1 a {
+    margin: auto;
+  }
+  header #gnb {
+    margin: 10px auto 0;
+  }
+  nav {
+    display: none;
+  }
+  article:first-child {
+    height: 350px;
+  }
+  article:nth-child(2) {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    z-index: 10;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 80%;
+    background: transparent;
+  }
+  header h1 {
+    border-bottom: none;
+  }
+  header h1 a {
+    width: 150px;
+    height: 106px;
+    background: url(../../images/logo1.png) 0 0 no-repeat;
+    background-size: contain;
+  }
+  header #gnb {
+    width: 90%;
+    margin: 30px auto 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header #gnb li {
+    width: 100%;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  header #gnb li a {
+    display: block;
+    padding: 20px 0 20px 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    color: #fff;
+  }
+  article:first-child {
+    height: 100vh;
+  }
+  article:first-child h2 {
+    display: none;
+  }
+  article:nth-child(n+2) {
+    display: none;
+  }
+}
+/*# sourceMappingURL=comm.css.map */
