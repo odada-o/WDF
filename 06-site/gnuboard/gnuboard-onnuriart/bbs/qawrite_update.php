@@ -7,8 +7,8 @@ $w == r : 추가질문
 $w == u : 수정
 ==========================*/
 
-// if($is_guest)
-//     alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
+if($is_guest)
+    alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
 
 $msg = array();
 
@@ -197,8 +197,7 @@ for ($i=1; $i<=$upload_count; $i++) {
         // image type
         if ( preg_match("/\.({$config['cf_image_extension']})$/i", $filename) ||
              preg_match("/\.({$config['cf_flash_extension']})$/i", $filename) ) {
-            // webp 파일의 type 이 18 이므로 업로드가 가능하도록 수정
-            if ($timg['2'] < 1 || $timg['2'] > 18)
+            if ($timg['2'] < 1 || $timg['2'] > 16)
                 continue;
         }
         //=================================================================
@@ -217,7 +216,7 @@ for ($i=1; $i<=$upload_count; $i++) {
         $upload[$i]['filesize'] = $filesize;
 
         // 아래의 문자열이 들어간 파일은 -x 를 붙여서 웹경로를 알더라도 실행을 하지 못하도록 함
-        $filename = preg_replace("/\.(php|pht|phtm|htm|cgi|pl|exe|jsp|asp|inc|phar)/i", "$0-x", $filename);
+        $filename = preg_replace("/\.(php|pht|phtm|htm|cgi|pl|exe|jsp|asp|inc)/i", "$0-x", $filename);
 
         shuffle($chars_array);
         $shuffle = implode('', $chars_array);

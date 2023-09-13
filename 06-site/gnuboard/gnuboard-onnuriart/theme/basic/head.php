@@ -6,11 +6,6 @@ if (G5_IS_MOBILE) {
     return;
 }
 
-if(G5_COMMUNITY_USE === false) {
-    define('G5_IS_COMMUNITY_PAGE', true);
-    include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
-    return;
-}
 include_once(G5_THEME_PATH.'/head.sub.php');
 include_once(G5_LIB_PATH.'/latest.lib.php');
 include_once(G5_LIB_PATH.'/outlogin.lib.php');
@@ -32,14 +27,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     ?>
     <div id="tnb">
     	<div class="inner">
-            <?php if(G5_COMMUNITY_USE) { ?>
-    		<ul id="hd_define">
-    			<li class="active"><a href="<?php echo G5_URL ?>/">커뮤니티</a></li>
-                <?php if (defined('G5_USE_SHOP') && G5_USE_SHOP) { ?>
-    			<li><a href="<?php echo G5_SHOP_URL ?>/">쇼핑몰</a></li>
-                <?php } ?>
-    		</ul>
-            <?php } ?>
 			<ul id="hd_qnb">
 	            <li><a href="<?php echo G5_BBS_URL ?>/faq.php">FAQ</a></li>
 	            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php">Q&A</a></li>
@@ -68,8 +55,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                 <script>
                 function fsearchbox_submit(f)
                 {
-                    var stx = f.stx.value.trim();
-                    if (stx.length < 2) {
+                    if (f.stx.value.length < 2) {
                         alert("검색어는 두글자 이상 입력하십시오.");
                         f.stx.select();
                         f.stx.focus();
@@ -78,8 +64,8 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
                     // 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
                     var cnt = 0;
-                    for (var i = 0; i < stx.length; i++) {
-                        if (stx.charAt(i) == ' ')
+                    for (var i=0; i<f.stx.value.length; i++) {
+                        if (f.stx.value.charAt(i) == ' ')
                             cnt++;
                     }
 
@@ -89,7 +75,6 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
                         f.stx.focus();
                         return false;
                     }
-                    f.stx.value = stx;
 
                     return true;
                 }

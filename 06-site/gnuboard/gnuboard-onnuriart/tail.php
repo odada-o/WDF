@@ -6,10 +6,12 @@ if (G5_IS_MOBILE) {
     return;
 }
 
+/*
 if(G5_COMMUNITY_USE === false) {
     include_once(G5_THEME_SHOP_PATH.'/shop.tail.php');
     return;
 }
+*/
 ?>
 
     

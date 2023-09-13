@@ -17,7 +17,7 @@ $utilHeight: 40px;
 }
 #header {
   width: $hdWidth;
-  padding: 40px 0;
+  padding: $utilHeight 0;
   background: $w;
   .inner {
     display: flex;
@@ -27,7 +27,7 @@ $utilHeight: 40px;
 }
 #main {
   width: calc(100% - $hdWidth);
-  padding-top: 40px;
+  padding-top: $utilHeight;
 }
 
 @media screen and (max-width: 1440px) {

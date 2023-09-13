@@ -11,7 +11,7 @@ for ($i=0; $i<count($filter); $i++) {
     $str = $filter[$i];
 
     // 제목 필터링 (찾으면 중지)
-    $subj = $cont = "";
+    $subj = "";
     $pos = stripos($subject, $str);
     if ($pos !== false) {
         $subj = $str;
@@ -19,6 +19,7 @@ for ($i=0; $i<count($filter); $i++) {
     }
 
     // 내용 필터링 (찾으면 중지)
+    $cont = "";
     $pos = stripos($content, $str);
     if ($pos !== false) {
         $cont = $str;
@@ -26,4 +27,4 @@ for ($i=0; $i<count($filter); $i++) {
     }
 }
 
-die("{\"subject\":\"{$subj}\",\"content\":\"{$cont}\"}");
+die("{\"subject\":\"$subj\",\"content\":\"$cont\"}");

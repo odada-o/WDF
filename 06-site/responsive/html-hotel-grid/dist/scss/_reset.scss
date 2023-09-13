@@ -118,6 +118,11 @@ body {
   font-family: 'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', sans-serif;
   color: $b-1;
 }
+@media screen and (max-width: 744px) {
+  body {
+    font-size: 20px;
+  }
+}
 
 /* color값은 디자인가이드에 맞게사용 */
 a {

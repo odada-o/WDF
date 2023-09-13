@@ -1,14 +1,12 @@
 <?php
 if (!defined('_GNUBOARD_')) exit;
 define('G5_MYSQL_HOST', 'localhost');
-define('G5_MYSQL_USER', 'eehd80');
+define('G5_MYSQL_USER', 'onnuriart');
 define('G5_MYSQL_PASSWORD', 'tkddlfch78**');
-define('G5_MYSQL_DB', 'eehd80');
+define('G5_MYSQL_DB', 'onnuriart');
 define('G5_MYSQL_SET_MODE', true);
 
 define('G5_TABLE_PREFIX', 'g5_');
-
-define('G5_TOKEN_ENCRYPTION_KEY', '4148366630345a524c753937456d7767'); // 토큰 암호화에 사용할 키
 
 $g5['write_prefix'] = G5_TABLE_PREFIX.'write_'; // 게시판 테이블명 접두사
 
@@ -42,5 +40,4 @@ $g5['faq_master_table'] = G5_TABLE_PREFIX.'faq_master'; // 자주하시는 질�
 $g5['new_win_table'] = G5_TABLE_PREFIX.'new_win'; // 새창 테이블
 $g5['menu_table'] = G5_TABLE_PREFIX.'menu'; // 메뉴관리 테이블
 $g5['social_profile_table'] = G5_TABLE_PREFIX.'member_social_profiles'; // 소셜 로그인 테이블
-$g5['member_cert_history_table'] = G5_TABLE_PREFIX.'member_cert_history'; // 본인인증 변경내역 테이블
 ?>

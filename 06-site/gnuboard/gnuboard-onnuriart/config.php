@@ -4,10 +4,11 @@
     상수 선언
 ********************/
 
+define('G5_VERSION', '그누보드5');
+define('G5_GNUBOARD_VER', '5.4.5.5');
+
 // 이 상수가 정의되지 않으면 각각의 개별 페이지는 별도로 실행될 수 없음
 define('_GNUBOARD_', true);
-
-include_once($g5_path['path'].'/version.php');   // 설정 파일
 
 // 기본 시간대 설정
 date_default_timezone_set("Asia/Seoul");
@@ -21,25 +22,20 @@ date_default_timezone_set("Asia/Seoul");
 회원가입, 글쓰기에 사용되는 https 로 시작되는 주소를 말합니다.
 포트가 있다면 도메인 뒤에 :443 과 같이 입력하세요.
 보안서버주소가 없다면 공란으로 두시면 되며 보안서버주소 뒤에 / 는 붙이지 않습니다.
-입력 예) https://www.domain.com:443/gnuboard5
+입력예) https://www.domain.com:443/gnuboard5
 */
 define('G5_DOMAIN', '');
 define('G5_HTTPS_DOMAIN', '');
 
-// 그누보드 디버그바 설정입니다, 실제 서버운영시 false 로 설정해 주세요.
+// 디버깅 상수, 실제 서버운영시 false 로 설정해 주제요.
 define('G5_DEBUG', false);
-define('G5_COLLECT_QUERY', false);
 
-// Set Database table default engine is Database default_storage_engine, If you want to use MyISAM or InnoDB, change to MyISAM or InnoDB.
-// DB에 테이블 생성 시 테이블의 기본 스토리지 엔진을 설정할 수 있습니다.
-// InnoDB 또는 MyISAM 으로 설정 가능합니다.
-// 빈값으로 두면 DB 버전이나 호스팅사 정책의 기본값에 따라 설정됩니다.
+// Set Databse table default engine is Databse default_storage_engine, If you want to use MyISAM or InnoDB, change to MyISAM or InnoDB.
 define('G5_DB_ENGINE', '');
 
-// Set Database table default Charset
-// utf8, utf8mb4 등 지정 가능 기본값은 utf8, 설치전에 utf8mb4 으로 수정 시 모든 테이블에 이모지 입력이 가능합니다.
-// utf8mb4 인코딩은 MySQL 또는 MariaDB 5.5 버전 이상을 요구합니다.
-define('G5_DB_CHARSET', 'utf8');
+// Set Databse table default Charset
+// utf8, utf8mb4 등 지정 가능 기본값은 utf8, 설치전에 utf8mb4 으로 수정시 모든 테이블에 이모지 입력이 가능합니다. utf8mb4 는 mysql 또는 mariadb 5.5 버전 이상을 요구합니다.
+define('G5_DB_CHARSET', 'utf8mb4');
 
 /*
 www.sir.kr 과 sir.kr 도메인은 서로 다른 도메인으로 인식합니다. 쿠키를 공유하려면 .sir.kr 과 같이 입력하세요.
@@ -64,7 +60,6 @@ define('G5_MOBILE_DIR',     'mobile');
 define('G5_OKNAME_DIR',     'okname');
 
 define('G5_KCPCERT_DIR',    'kcpcert');
-define('G5_INICERT_DIR',     'inicert');
 define('G5_LGXPAY_DIR',     'lgxpay');
 
 define('G5_SNS_DIR',        'sns');
@@ -76,7 +71,7 @@ define('G5_THEME_DIR',      'theme');
 define('G5_GROUP_DIR',      'group');
 define('G5_CONTENT_DIR',    'content');
 
-// URL 은 브라우저상에서의 경로 (도메인으로 부터)
+// URL 은 브라우저상에서의 경로 (도메인으로 부터의)
 if (G5_DOMAIN) {
     define('G5_URL', G5_DOMAIN);
 } else {
@@ -103,7 +98,6 @@ define('G5_PLUGIN_URL',     G5_URL.'/'.G5_PLUGIN_DIR);
 define('G5_EDITOR_URL',     G5_PLUGIN_URL.'/'.G5_EDITOR_DIR);
 define('G5_OKNAME_URL',     G5_PLUGIN_URL.'/'.G5_OKNAME_DIR);
 define('G5_KCPCERT_URL',    G5_PLUGIN_URL.'/'.G5_KCPCERT_DIR);
-define('G5_INICERT_URL',     G5_PLUGIN_URL.'/'.G5_INICERT_DIR);
 define('G5_LGXPAY_URL',     G5_PLUGIN_URL.'/'.G5_LGXPAY_DIR);
 define('G5_SNS_URL',        G5_PLUGIN_URL.'/'.G5_SNS_DIR);
 define('G5_SYNDI_URL',      G5_PLUGIN_URL.'/'.G5_SYNDI_DIR);
@@ -123,7 +117,6 @@ define('G5_EDITOR_PATH',    G5_PLUGIN_PATH.'/'.G5_EDITOR_DIR);
 define('G5_OKNAME_PATH',    G5_PLUGIN_PATH.'/'.G5_OKNAME_DIR);
 
 define('G5_KCPCERT_PATH',   G5_PLUGIN_PATH.'/'.G5_KCPCERT_DIR);
-define('G5_INICERT_PATH',   G5_PLUGIN_PATH.'/'.G5_INICERT_DIR);
 define('G5_LGXPAY_PATH',    G5_PLUGIN_PATH.'/'.G5_LGXPAY_DIR);
 
 define('G5_SNS_PATH',       G5_PLUGIN_PATH.'/'.G5_SNS_DIR);
@@ -166,7 +159,7 @@ define('G5_SPACE',          32); // 공백
 define('G5_SPECIAL',        64); // 특수문자
 
 // SEO TITLE 문단 길이
-define('G5_SEO_TITLE_WORD_CUT', 8);        // SEO TITLE 문단 길이
+define('G5_SEO_TITEL_WORD_CUT', 8);        // SEO TITLE 문단 길이
 
 // 퍼미션
 define('G5_DIR_PERMISSION',  0755); // 디렉토리 생성시 퍼미션
@@ -177,7 +170,7 @@ define('G5_MOBILE_AGENT',   'phone|samsung|lgtel|mobile|[^A]skt|nokia|blackberry
 
 // SMTP
 // lib/mailer.lib.php 에서 사용
-define('G5_SMTP',      '127.0.0.1');
+define('G5_SMTP',      '');
 define('G5_SMTP_PORT', '25');
 
 
@@ -193,8 +186,8 @@ define('G5_STRING_ENCRYPT_FUNCTION', 'create_hash');
 define('G5_MYSQL_PASSWORD_LENGTH', 41);         // mysql password length 41, old_password 의 경우에는 16
 
 // SQL 에러를 표시할 것인지 지정
-// 에러를 표시하려면 true 로 변경
-define('G5_DISPLAY_SQL_ERROR', false);
+// 에러를 표시하려면 TRUE 로 변경
+define('G5_DISPLAY_SQL_ERROR', FALSE);
 
 // escape string 처리 함수 지정
 // addslashes 로 변경 가능
@@ -234,5 +227,8 @@ define('G5_VISIT_BROWSCAP_USE', false);
 */
 define('G5_IP_DISPLAY', '\\1.♡.\\3.\\4');
 
-// KAKAO 우편번호 서비스 CDN
-define('G5_POSTCODE_JS', '<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" async></script>');
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on') {   //https 통신일때 daum 주소 js
+    define('G5_POSTCODE_JS', '<script src="https://spi.maps.daum.net/imap/map_js_init/postcode.v2.js"></script>');
+} else {  //http 통신일때 daum 주소 js
+    define('G5_POSTCODE_JS', '<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>');
+}

@@ -9,8 +9,8 @@ if($w != '' && $w != 'u' && $w != 'r') {
 $qa_id = isset($_REQUEST['qa_id']) ? (int) $_REQUEST['qa_id'] : 0;
 $write = array('qa_email_recv'=>'', 'qa_subject'=>'', 'qa_category'=>'');
 
-// if($is_guest)
-//     alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
+if($is_guest)
+    alert('회원이시라면 로그인 후 이용해 보십시오.', './login.php?url='.urlencode(G5_BBS_URL.'/qalist.php'));
 
 $qaconfig = get_qa_config();
 $token = _token();
@@ -79,8 +79,7 @@ if(is_file($skin_file)) {
         else
             $content = "\n\n\n\n====== 이전 답변내용 =======\n";
 
-        // KISA 취약점 권고사항 Stored XSS (210624)
-        $content .= get_text(html_purifier($write['qa_content']), 0);
+        $content .= get_text($write['qa_content'], 0);
     } else {
         //$content = get_text($write['qa_content'], 0);
         
@@ -96,7 +95,6 @@ if(is_file($skin_file)) {
     $upload_max_filesize = number_format($qaconfig['qa_upload_size']) . ' 바이트';
 
     $html_value = '';
-    $html_checked = '';
     if (isset($write['qa_html']) && $write['qa_html']) {
         $html_checked = 'checked';
         $html_value = $write['qa_html'];

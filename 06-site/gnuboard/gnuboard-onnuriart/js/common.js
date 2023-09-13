@@ -134,7 +134,20 @@ function no_comma(data)
 function del(href)
 {
     if(confirm("한번 삭제한 자료는 복구할 방법이 없습니다.\n\n정말 삭제하시겠습니까?")) {
-        document.location.href = href;
+        var iev = -1;
+        if (navigator.appName == 'Microsoft Internet Explorer') {
+            var ua = navigator.userAgent;
+            var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            if (re.exec(ua) != null)
+                iev = parseFloat(RegExp.$1);
+        }
+
+        // IE6 이하에서 한글깨짐 방지
+        if (iev != -1 && iev < 7) {
+            document.location.href = encodeURI(href);
+        } else {
+            document.location.href = href;
+        }
     }
 }
 
@@ -355,14 +368,10 @@ var win_homepage = function(href) {
  * 우편번호 창
  **/
 var win_zip = function(frm_name, frm_zip, frm_addr1, frm_addr2, frm_addr3, frm_jibeon) {
-    if(typeof daum === "undefined"){
-        alert("KAKAO 우편번호 서비스 postcode.v2.js 파일이 로드되지 않았습니다.");
+    if(typeof daum === 'undefined'){
+        alert("다음 우편번호 postcode.v2.js 파일이 로드되지 않았습니다.");
         return false;
     }
-
-    // 핀치 줌 현상 제거
-    var vContent = "width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10";
-    $("#meta_viewport").attr("content", vContent + ",user-scalable=no");
 
     var zip_case = 1;   //0이면 레이어, 1이면 페이지에 끼워 넣기, 2이면 새창
 
@@ -409,7 +418,6 @@ var win_zip = function(frm_name, frm_zip, frm_addr1, frm_addr2, frm_addr3, frm_j
         }
         
         setTimeout(function(){
-            $("#meta_viewport").attr("content", vContent);
             of[frm_addr2].focus();
         } , 100);
     };
@@ -423,11 +431,10 @@ var win_zip = function(frm_name, frm_zip, frm_addr1, frm_addr2, frm_addr3, frm_j
                 element_wrap = document.createElement("div");
                 element_wrap.setAttribute("id", daum_pape_id);
                 element_wrap.style.cssText = 'display:none;border:1px solid;left:0;width:100%;height:300px;margin:5px 0;position:relative;-webkit-overflow-scrolling:touch;';
-                element_wrap.innerHTML = '<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-21px;z-index:1" class="close_daum_juso" alt="접기 버튼">';
+                element_wrap.innerHTML = '<img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-21px;z-index:1" class="close_daum_juso" alt="접기 버튼">';
                 jQuery('form[name="'+frm_name+'"]').find('input[name="'+frm_addr1+'"]').before(element_wrap);
                 jQuery("#"+daum_pape_id).off("click", ".close_daum_juso").on("click", ".close_daum_juso", function(e){
                     e.preventDefault();
-                    $("#meta_viewport").attr("content", vContent);
                     jQuery(this).parent().hide();
                 });
             }
@@ -471,7 +478,6 @@ var win_zip = function(frm_name, frm_zip, frm_addr1, frm_addr2, frm_addr3, frm_j
                 document.body.appendChild(element_layer);
                 jQuery("#"+rayer_id).off("click", ".close_daum_juso").on("click", ".close_daum_juso", function(e){
                     e.preventDefault();
-                    $("#meta_viewport").attr("content", vContent);
                     jQuery(this).parent().hide();
                 });
             }
@@ -508,15 +514,6 @@ var win_poll = function(href) {
     var new_win = window.open(href, 'win_poll', 'width=616, height=500, scrollbars=1');
     new_win.focus();
 }
-
-/**
- * 쿠폰
- **/
-var win_coupon = function(href) {
-    var new_win = window.open(href, "win_coupon", "left=100,top=100,width=700, height=600, scrollbars=1");
-    new_win.focus();
-}
-
 
 /**
  * 스크린리더 미사용자를 위한 스크립트 - 지운아빠 2013-04-22
@@ -612,11 +609,6 @@ $(function(){
         return false;
     });
     */
-
-    $(".win_coupon").click(function() {
-        win_coupon(this.href);
-        return false;
-    });
 
     // 사이드뷰
     var sv_hide = false;

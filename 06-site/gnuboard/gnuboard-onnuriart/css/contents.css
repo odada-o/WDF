@@ -194,13 +194,13 @@
 .mVisual {
     position: relative;
     height: 650px;
-    background: url(/work/onnuriart/images/slide-main1.jpg) no-repeat 50% 90% / cover;
+    background: url(/images/slide-main1.jpg) no-repeat 50% 90% / cover;
 }
 
 .visual-sub {
     position: relative;
     height: 346px;
-    background: url(/work/onnuriart/images/about-head.jpg) no-repeat 50% 32% / cover;
+    background: url(/images/about-head.jpg) no-repeat 50% 32% / cover;
 }
 
 .visual-sub .txt {
@@ -278,7 +278,7 @@
 }
 
 .sec-vision.sec-edu .sec-cont dl:first-child::before {
-    background: url(/work/onnuriart/images/facility-edu1.jpg) 0 33% / cover no-repeat;
+    background: url(/images/facility-edu1.jpg) 0 33% / cover no-repeat;
 }
 
 .sec-vision.sec-edu .sec-cont dl:last-child {
@@ -286,7 +286,7 @@
 }
 
 .sec-vision.sec-edu .sec-cont dl:last-child::before {
-    background: url(/work/onnuriart/images/facility-edu2.jpg) 0 26% / cover no-repeat;
+    background: url(/images/facility-edu2.jpg) 0 26% / cover no-repeat;
 }
 
 .sec-vision .sec-tit {
@@ -305,7 +305,7 @@
     left: 0;
     bottom: 0;
     width: 35%;
-    background: url(/work/onnuriart/images/about-img1.jpg) no-repeat 100% 100% / cover;
+    background: url(/images/about-img1.jpg) no-repeat 100% 100% / cover;
 }
 
 .sec-vision .txt {

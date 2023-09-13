@@ -105,7 +105,7 @@
     background-color: greenyellow;
   }
 }
-// width 744px 이하일 경우
+// *** width 744px 이하일 경우 (mobile)
 @media screen and (max-width: 744px) {
   body {
     background-color: blueviolet;

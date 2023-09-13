@@ -44,8 +44,8 @@ if (!empty($_POST['wr_email']))
 if ($is_guest) {
     if ($wr_name == '')
         alert('이름은 필히 입력하셔야 합니다.');
-    // if(!chk_captcha())
-    //     alert('자동등록방지 숫자가 틀렸습니다.');
+    if(!chk_captcha())
+        alert('자동등록방지 숫자가 틀렸습니다.');
 }
 
 if ($w == "c" || $w == "cu") {
@@ -324,7 +324,9 @@ else if ($w == 'cu') // 댓글 수정
     if (!$is_admin)
         $sql_ip = " , wr_ip = '{$_SERVER['REMOTE_ADDR']}' ";
 
-    $sql_secret = " , wr_option = '$wr_secret' ";
+    $sql_secret = "";
+    if ($wr_secret)
+        $sql_secret = " , wr_option = '$wr_secret' ";
 
     $sql = " update $write_table
                 set wr_subject = '$wr_subject',

@@ -1,5 +1,7 @@
 // 본인확인 인증창 호출
-function certify_win_open(type, url, event) {
+function certify_win_open(type, url, event)
+{
+
     if (typeof event == "undefined") {
         event = window.event;
     }
@@ -19,17 +21,9 @@ function certify_win_open(type, url, event) {
         if($("input[name=veri_up_hash]").length < 1)
                 $("input[name=cert_no]").after('<input type="hidden" name="veri_up_hash" value="">');
 
-        // iframe에서 세션공유 문제가 있어서 더 이상 iframe 을 사용하지 않습니다.
-        var use_iframe = false;
-
-        if(use_iframe && (navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1))
+        if( navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1 )
         {
             var $frm = $(event.target.form);
-
-            if($frm.length < 1){
-                $frm = $(event.target).parent();
-            }
-
             if($("#kcp_cert").length < 1) {
                 $frm.wrap('<div id="cert_info"></div>');
 
@@ -39,7 +33,7 @@ function certify_win_open(type, url, event) {
             }
 
             $("#cert_info")
-                .after('<iframe id="kcp_cert" name="kcp_cert" width="100%" height="700" frameborder="0" scrolling="yes" style="display:none"></iframe>');
+                .after('<iframe id="kcp_cert" name="kcp_cert" width="100%" height="700" frameborder="0" scrolling="no" style="display:none"></iframe>');
 
             var temp_form = document.form_temp;
             temp_form.target = "kcp_cert";
@@ -100,15 +94,12 @@ function certify_win_open(type, url, event) {
 }
 
 // 인증체크
-function cert_confirm() {
-        
+function cert_confirm()
+{
     var type;
-    var val = document.fregisterform.cert_type.value;
+    var val = document.fregisterform.cert_type.value
 
     switch(val) {
-        case "simple":
-            type = "간편인증";
-            break;
         case "ipin":
             type = "아이핀";
             break;
@@ -123,19 +114,4 @@ function cert_confirm() {
         return true;
     else
         return false;
-}
-
-function call_sa(url) {   
-    let window = popup_center();
-    if(window != undefined && window != null) {
-        window.location.href = url;
-    }
-}
-
-function popup_center() {
-	let _width = 400;
-	let _height = 620;
-	var xPos = (document.body.offsetWidth/2) - (_width/2); // 가운데 정렬
-	xPos += window.screenLeft; // 듀얼 모니터일 때 
-	    return window.open("", "sa_popup", "width="+_width+", height="+_height+", left="+xPos+", menubar=yes, status=yes, titlebar=yes, resizable=yes");
 }

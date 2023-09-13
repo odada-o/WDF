@@ -57,9 +57,7 @@ if($config['cf_add_meta'])
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="온누리국악예술인협동조합" />
 <meta name="description" content="온누리국악예술인협동조합" />
-<!-- <meta name="google-site-verification" content="IAFqMKrFL_oI-6qEK5RLdIQIgLSI2Tm4BioBI8KstoA" />
-<meta name="naver-site-verification" content="c92584d9c1fb2f16b436d9f4b31eb4b7f58903f4" /> -->
-<meta property="og:type" content="온누리국악예술인협동조합"> 
+<meta property="og:type" content="온누리국악예술인협동조합">
 <meta property="og:title" content="온누리국악예술인협동조합">
 <meta property="og:description" content="온누리국악예술인협동조합 사이트입니다.">
 <meta property="og:image" content="./images/slide-main1.jpg">
@@ -70,7 +68,10 @@ if($config['cf_add_meta'])
 <meta name="twitter:image" content="https://onnuriart.com/images/slide-main1.jpg">
 <meta name="twitter:domain" content="온누리국악예술인협동조합">
 <title><?php echo $g5_head_title; ?></title>
-<!-- admin.css / mobile.css / default.css -> comm.css -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
 <?php
 if (defined('G5_IS_ADMIN')) {
     if(!defined('_THEME_PREVIEW_'))
@@ -78,7 +79,8 @@ if (defined('G5_IS_ADMIN')) {
 } else {
     $shop_css = '';
     if (defined('_SHOP_')) $shop_css = '_shop';
-    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'comm').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
+    // echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/'.(G5_IS_MOBILE?'mobile':'default').$shop_css.'.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
+    echo '<link rel="stylesheet" href="'.run_replace('head_css_url', G5_CSS_URL.'/comm.css?ver='.G5_CSS_VER, G5_URL).'">'.PHP_EOL;
 }
 ?>
 <!--[if lte IE 8]>
@@ -102,6 +104,7 @@ var g5_shop_url = "<?php echo G5_SHOP_URL; ?>";
 var g5_admin_url = "<?php echo G5_ADMIN_URL; ?>";
 <?php } ?>
 </script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
 <?php
 add_javascript('<script src="'.G5_JS_URL.'/jquery-1.12.4.min.js"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/jquery-migrate-1.4.1.min.js"></script>', 0);
@@ -112,10 +115,12 @@ if (defined('_SHOP_')) {
 } else {
     add_javascript('<script src="'.G5_JS_URL.'/jquery.menu.js?ver='.G5_JS_VER.'"></script>', 0);
 }
+add_javascript('<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/common.js?ver='.G5_JS_VER.'"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/wrest.js?ver='.G5_JS_VER.'"></script>', 0);
 add_javascript('<script src="'.G5_JS_URL.'/placeholders.min.js"></script>', 0);
 add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/font-awesome/css/font-awesome.min.css">', 0);
+add_stylesheet('<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">', 0);
 
 if(G5_IS_MOBILE) {
     add_javascript('<script src="'.G5_JS_URL.'/modernizr.custom.70111.js"></script>', 1); // overflow scroll 감지

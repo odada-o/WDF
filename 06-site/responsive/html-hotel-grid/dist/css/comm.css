@@ -164,6 +164,11 @@ body {
   color: #222;
 }
 
+@media screen and (max-width: 744px) {
+  body {
+    font-size: 20px;
+  }
+}
 /* color값은 디자인가이드에 맞게사용 */
 a {
   color: #333;
@@ -412,7 +417,7 @@ legend {
   left: 190px;
   right: 0;
   height: 40px;
-  background: #000;
+  background: red;
 }
 
 @media screen and (max-width: 1440px) {

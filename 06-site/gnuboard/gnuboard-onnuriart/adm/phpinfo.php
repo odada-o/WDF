@@ -1,6 +1,6 @@
 <?php
 $sub_menu = "100500";
-require_once './_common.php';
+include_once('./_common.php');
 
 check_demo();
 

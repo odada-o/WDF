@@ -203,9 +203,9 @@ if ($w == '' || $w == 'u') {
 
 $is_use_captcha = ((($board['bo_use_captcha'] && $w !== 'u') || $is_guest) && !$is_admin) ? 1 : 0;
 
-// if ($is_use_captcha && !chk_captcha()) {
-//     alert('자동등록방지 숫자가 틀렸습니다.');
-// }
+if ($is_use_captcha && !chk_captcha()) {
+    alert('자동등록방지 숫자가 틀렸습니다.');
+}
 
 if ($w == '' || $w == 'r') {
     if (isset($_SESSION['ss_datetime'])) {
@@ -532,7 +532,7 @@ if(isset($_FILES['bf_file']['name']) && is_array($_FILES['bf_file']['name'])) {
             // image type
             if ( preg_match("/\.({$config['cf_image_extension']})$/i", $filename) ||
                  preg_match("/\.({$config['cf_flash_extension']})$/i", $filename) ) {
-                if ($timg['2'] < 1 || $timg['2'] > 18)
+                if ($timg['2'] < 1 || $timg['2'] > 16)
                     continue;
             }
             //=================================================================
@@ -561,7 +561,7 @@ if(isset($_FILES['bf_file']['name']) && is_array($_FILES['bf_file']['name'])) {
             $upload[$i]['filesize'] = $filesize;
 
             // 아래의 문자열이 들어간 파일은 -x 를 붙여서 웹경로를 알더라도 실행을 하지 못하도록 함
-            $filename = preg_replace("/\.(php|pht|phtm|htm|cgi|pl|exe|jsp|asp|inc|phar)/i", "$0-x", $filename);
+            $filename = preg_replace("/\.(php|pht|phtm|htm|cgi|pl|exe|jsp|asp|inc)/i", "$0-x", $filename);
 
             shuffle($chars_array);
             $shuffle = implode('', $chars_array);
@@ -658,7 +658,7 @@ for ($i=(int)$row['max_bf_no']; $i>=0; $i--)
     $row2 = sql_fetch(" select bf_file from {$g5['board_file_table']} where bo_table = '{$bo_table}' and wr_id = '{$wr_id}' and bf_no = '{$i}' ");
 
     // 정보가 있다면 빠집니다.
-    if (isset($row2['bf_file']) && $row2['bf_file']) break;
+    if ($row2['bf_file']) break;
 
     // 그렇지 않다면 정보를 삭제합니다.
     sql_query(" delete from {$g5['board_file_table']} where bo_table = '{$bo_table}' and wr_id = '{$wr_id}' and bf_no = '{$i}' ");
@@ -725,10 +725,8 @@ if (!($w == 'u' || $w == 'cu') && $config['cf_email_use'] && $board['bo_use_emai
     }
 
     // 옵션에 메일받기가 체크되어 있고, 게시자의 메일이 있다면
-    if (isset($wr['wr_option']) && isset($wr['wr_email'])) {
-        if (strstr($wr['wr_option'], 'mail') && $wr['wr_email'])
-            $array_email[] = $wr['wr_email'];
-    }
+    if (strstr($wr['wr_option'], 'mail') && $wr['wr_email'])
+        $array_email[] = $wr['wr_email'];
 
     // 중복된 메일 주소는 제거
     $unique_email = array_unique($array_email);

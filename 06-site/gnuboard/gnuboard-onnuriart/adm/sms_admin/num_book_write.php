@@ -33,16 +33,7 @@ if ($w == 'u' && is_numeric($bk_no)) {
     $g5['title'] .= '수정';
 }
 else  {
-    $write = array(
-        'bg_no' => (int) $bg_no,
-        'bk_no' => 0,
-        'mb_id' => '',
-        'bk_name' => '',
-        'bk_hp' => '',
-        'bk_memo' => '',
-        'bk_receipt' => 1,
-        'bk_datetime' => ''
-    );
+    $write = array('bg_no' => (int) $bg_no);
     $g5['title'] .= '추가';
 }
 

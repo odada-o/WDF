@@ -6,17 +6,6 @@ certify_count_check($member['mb_id'], 'hp');
 
 setlocale(LC_CTYPE, 'ko_KR.euc-kr');
 
-switch($_GET['pageType']){ // 페이지 타입 체크
-    case "register":
-        $resultPage = "/kcpcert_result.php";
-        break;
-    case "find":
-        $resultPage = "/find_kcpcert_result.php";
-        break;
-    default:
-        alert_close('잘못된 접근입니다.');
-}
-
 // kcp 휴대폰인증파일
 include_once(G5_KCPCERT_PATH.'/kcpcert_config.php');
 
@@ -80,7 +69,7 @@ $ct_cert->mf_clear();
 <!-- 사이트코드 -->
 <input type="hidden" name="site_cd"      value="<?php echo $site_cd; ?>" />
 <!-- Ret_URL : 인증결과 리턴 페이지 ( 가맹점 URL 로 설정해 주셔야 합니다. ) -->
-<input type="hidden" name="Ret_URL"      value="<?php echo G5_KCPCERT_URL.$resultPage; ?>" />
+<input type="hidden" name="Ret_URL"      value="<?php echo G5_KCPCERT_URL; ?>/kcpcert_result.php" />
 <!-- cert_otp_use 필수 ( 메뉴얼 참고)
      Y : 실명 확인 + OTP 점유 확인 , N : 실명 확인 only
 -->
@@ -116,17 +105,17 @@ window.onload = function() {
 function cert_page()
 {
     var frm = document.form_auth;
-    // iframe에서 세션공유 문제가 있어서 더 이상 iframe 을 사용하지 않습니다.
-    var use_iframe = false;
 
     if ( ( frm.req_tx.value == "auth" || frm.req_tx.value == "otp_auth" ) )
     {
-        frm.action=".<?php echo $resultPage; ?>";
+        frm.action="./kcpcert_result.php";
 
-        if(use_iframe && ( navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1 ) )
+       // MOBILE
+        if( ( navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1 ) )
         {
             self.name="kcp_cert";
         }
+        // PC
         else
         {
             frm.target="kcp_cert";
@@ -139,12 +128,12 @@ function cert_page()
 
     else if ( frm.req_tx.value == "cert" )
     {
-        if(use_iframe && ( navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1 ) )
+        if( ( navigator.userAgent.indexOf("Android") > - 1 || navigator.userAgent.indexOf("iPhone") > - 1 ) ) // 스마트폰인 경우
         {
             window.parent.$("input[name=veri_up_hash]").val(frm.up_hash.value); // up_hash 데이터 검증을 위한 필드
             self.name="auth_popup";
         }
-        else
+        else // 스마트폰 아닐때
         {
             window.opener.$("input[name=veri_up_hash]").val(frm.up_hash.value); // up_hash 데이터 검증을 위한 필드
             frm.target = "auth_popup";

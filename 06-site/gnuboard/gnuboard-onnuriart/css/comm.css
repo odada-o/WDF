@@ -116,7 +116,7 @@
     display: block;
     width: 230px;
     height: 37px;
-    background: url(/work/onnuriart/images/logo.png) no-repeat 0 50% / contain;
+    background: url(/images/logo.png) no-repeat 0 50% / contain;
     text-indent: -9999px;
 }
 
@@ -412,7 +412,7 @@
     width: 10px;
     height: 10px;
     overflow: hidden;
-    background: url("../img/gnb_bg2.gif") no-repeat 50% 50%;
+    background: url("/img/gnb_bg2.gif") no-repeat 50% 50%;
     text-indent: -999px;
 }
 .gnb_1da {
@@ -807,34 +807,34 @@ a.gnb_2da:hover {
     background-position: 0 0;
 }
 #ft_sns .lst_sns .youtube a {
-    background-image: url(/work/onnuriart/images/ft-sns-youtube-off.svg);
+    background-image: url(/images/ft-sns-youtube-off.svg);
 }
 #ft_sns .lst_sns .instagram a {
-    background-image: url(/work/onnuriart/images/ft-sns-instagram-off.svg);
+    background-image: url(/images/ft-sns-instagram-off.svg);
 }
 #ft_sns .lst_sns .facebook a {
-    background-image: url(/work/onnuriart/images/ft-sns-facebook-off.svg);
+    background-image: url(/images/ft-sns-facebook-off.svg);
 }
 #ft_sns .lst_sns .blog a {
-    background-image: url(/work/onnuriart/images/ft-sns-blog-off.svg);
+    background-image: url(/images/ft-sns-blog-off.svg);
 }
 #ft_sns .lst_sns .kakao a {
-    background-image: url(/work/onnuriart/images/ft-sns-kakao-off.svg);
+    background-image: url(/images/ft-sns-kakao-off.svg);
 }
 #ft_sns .lst_sns .youtube a:hover {
-    background-image: url(/work/onnuriart/images/ft-sns-youtube.svg);
+    background-image: url(/images/ft-sns-youtube.svg);
 }
 #ft_sns .lst_sns .instagram a:hover {
-    background-image: url(/work/onnuriart/images/ft-sns-instagram.svg);
+    background-image: url(/images/ft-sns-instagram.svg);
 }
 #ft_sns .lst_sns .facebook a:hover {
-    background-image: url(/work/onnuriart/images/ft-sns-facebook.svg);
+    background-image: url(/images/ft-sns-facebook.svg);
 }
 #ft_sns .lst_sns .blog a:hover {
-    background-image: url(/work/onnuriart/images/ft-sns-blog.svg);
+    background-image: url(/images/ft-sns-blog.svg);
 }
 #ft_sns .lst_sns .kakao a:hover {
-    background-image: url(/work/onnuriart/images/ft-sns-kakao.svg);
+    background-image: url(/images/ft-sns-kakao.svg);
 }
 
 #ft_catch {
@@ -980,7 +980,7 @@ a.gnb_2da:hover {
     vertical-align: middle;
     overflow: hidden;
     cursor: pointer;
-    background: url("../../../img/captcha2.png") no-repeat;
+    background: url("/img/captcha2.png") no-repeat;
     text-indent: -999px;
     border-radius: 3px;
 }
@@ -994,7 +994,7 @@ a.gnb_2da:hover {
     vertical-align: middle;
     overflow: hidden;
     cursor: pointer;
-    background: url("../../../img/captcha2.png") no-repeat 0 -40px;
+    background: url("/img/captcha2.png") no-repeat 0 -40px;
     text-indent: -999px;
     border-radius: 3px;
 }
@@ -1043,7 +1043,7 @@ a.gnb_2da:hover {
     vertical-align: middle;
     overflow: hidden;
     cursor: pointer;
-    background: url("../../../img/captcha2.png") no-repeat 0 -40px;
+    background: url("/img/captcha2.png") no-repeat 0 -40px;
     text-indent: -999px;
 }
 #captcha.m_captcha #captcha_reload span {
@@ -1071,7 +1071,7 @@ a.gnb_2da:hover {
 #captcha.m_captcha #captcha_mp3 {
     width: 31px;
     height: 31px;
-    background: url("../../../img/captcha2.png") no-repeat 0 0;
+    background: url("/img/captcha2.png") no-repeat 0 0;
     vertical-align: top;
     overflow: hidden;
     cursor: pointer;
@@ -1609,7 +1609,7 @@ a.btn_admin:hover {
 /* 필수입력 */
 .required,
 textarea.required {
-    background-image: url("../img/require.png") !important;
+    background-image: url("/img/require.png") !important;
     background-repeat: no-repeat !important;
     background-position: right top !important;
 }
@@ -1936,28 +1936,28 @@ textarea.required {
 .pg_start {
     text-indent: -999px;
     overflow: hidden;
-    background: url("../img/btn_first.gif") no-repeat 50% 50% #eee;
+    background: url("/img/btn_first.gif") no-repeat 50% 50% #eee;
     padding: 0;
     border: 1px solid #eee;
 }
 .pg_prev {
     text-indent: -999px;
     overflow: hidden;
-    background: url("../img/btn_prev.gif") no-repeat 50% 50% #eee;
+    background: url("/img/btn_prev.gif") no-repeat 50% 50% #eee;
     padding: 0;
     border: 1px solid #eee;
 }
 .pg_end {
     text-indent: -999px;
     overflow: hidden;
-    background: url("../img/btn_end.gif") no-repeat 50% 50% #eee;
+    background: url("/img/btn_end.gif") no-repeat 50% 50% #eee;
     padding: 0;
     border: 1px solid #eee;
 }
 .pg_next {
     text-indent: -999px;
     overflow: hidden;
-    background: url("../img/btn_next.gif") no-repeat 50% 50% #eee;
+    background: url("/img/btn_next.gif") no-repeat 50% 50% #eee;
     padding: 0;
     border: 1px solid #eee;
 }

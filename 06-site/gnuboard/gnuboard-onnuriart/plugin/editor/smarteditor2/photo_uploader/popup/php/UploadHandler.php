@@ -26,7 +26,6 @@ class UploadHandler
         "image/jpg"       => array("imagecreatefromjpeg", "imagejpeg"),
         "image/jpeg"      => array("imagecreatefromjpeg", "imagejpeg"),
         "image/png"       => array("imagecreatefrompng", "imagepng"),
-        "image/webp"      => array("imagecreatefromwebp", "imagewebp"),
         "image/bmp"       => array("imagecreatefromwbmp", "imagewbmp")
     );
 
@@ -94,10 +93,10 @@ class UploadHandler
             // is enabled, set to 0 to disable chunked reading of files:
             'readfile_chunk_size' => 10 * 1024 * 1024, // 10 MiB
             // Defines which files can be displayed inline when downloaded:
-            'inline_file_types' => '/\.(gif|jpe?g|bmp|png|webp)$/i',
+            'inline_file_types' => '/\.(gif|jpe?g|bmp|png)$/i',
             // Defines which files (based on their names) are accepted for upload:
             //'accept_file_types' => '/.+$/i',
-            'accept_file_types' => '/\.(gif|jpe?g|bmp|png|webp)$/i',
+            'accept_file_types' => '/\.(gif|jpe?g|bmp|png)$/i',
             // The php.ini settings upload_max_filesize and post_max_size
             // take precedence over the following max_file_size setting:
             'max_file_size' => null,
@@ -105,7 +104,7 @@ class UploadHandler
             // The maximum number of files for the upload directory:
             'max_number_of_files' => null,
             // Defines which files are handled as image files:
-            'image_file_types' => '/\.(gif|jpe?g|bmp|png|webp)$/i',
+            'image_file_types' => '/\.(gif|jpe?g|bmp|png)$/i',
             'is_resize' => (defined('SMARTEDITOR_UPLOAD_RESIZE') && SMARTEDITOR_UPLOAD_RESIZE) ? true : false,
             'resize_max_width' => (defined('SMARTEDITOR_UPLOAD_MAX_WIDTH') && SMARTEDITOR_UPLOAD_MAX_WIDTH) ? SMARTEDITOR_UPLOAD_MAX_WIDTH : 800,
             'resize_max_height' => (defined('SMARTEDITOR_UPLOAD_MAX_HEIGHT') && SMARTEDITOR_UPLOAD_MAX_HEIGHT) ? SMARTEDITOR_UPLOAD_MAX_HEIGHT : 800,
@@ -499,7 +498,7 @@ class UploadHandler
         }
         // Add missing file extension for known image types:
         if (strpos($name, '.') === false &&
-                preg_match('/^image\/(gif|jpe?g|png|webp)/', $type, $matches)) {
+                preg_match('/^image\/(gif|jpe?g|png)/', $type, $matches)) {
             $name .= '.'.$matches[1];
         }
         if (function_exists('exif_imagetype') && $file_path) {
@@ -512,9 +511,6 @@ class UploadHandler
                     break;
                 case IMAGETYPE_GIF:
                     $extensions = array('gif');
-                    break;
-                case IMAGETYPE_WEBP:
-                    $extensions = array('webp');
                     break;
             }
             // Adjust incorrect image file extensions:
@@ -692,7 +688,7 @@ class UploadHandler
                 $src_func = 'imagecreatefromjpeg';
                 $write_func = 'imagejpeg';
                 $image_quality = isset($options['jpeg_quality']) ?
-                $options['jpeg_quality'] : 75;
+                    $options['jpeg_quality'] : 75;
                 break;
             case 'gif':
                 $src_func = 'imagecreatefromgif';
@@ -703,12 +699,7 @@ class UploadHandler
                 $src_func = 'imagecreatefrompng';
                 $write_func = 'imagepng';
                 $image_quality = isset($options['png_quality']) ?
-                $options['png_quality'] : 9;
-                break;
-            case 'webp':
-                $src_func = 'imagecreatefromwebp';
-                $write_func = 'imagewebp';
-                $image_quality = null;
+                    $options['png_quality'] : 9;
                 break;
             default:
                 return false;
@@ -1057,7 +1048,7 @@ class UploadHandler
         }
         if (count($failed_versions)) {
             $file->error = $this->get_error_message('image_resize')
-                    .' ('.implode(', ', $failed_versions).')';
+                    .' ('.implode($failed_versions,', ').')';
         }
         // Free memory:
         $this->destroy_image_object($file_path);
@@ -1092,16 +1083,11 @@ class UploadHandler
               //throw new Exception("Invalid image MIME type");
               return false;
             }
-            
+
             $image_from_file = self::$MIME_TYPES_PROCESSORS[$mime_type][0];
             $image_to_file = self::$MIME_TYPES_PROCESSORS[$mime_type][1];
 
-            // webp 의 경우 gd-webp cannot allocate temporary buffer 오류가 발생하여 webp 이미지가 업로드 되지 않을 수 있음
-            // $reprocessed_image = imagecreatefromwebp($file_path); 이 코드로 웹서버의 error_log 에서 확인해 볼 수 있음
-            // https://stackoverflow.com/questions/61394477/php-e-error-gd-webp-cannot-allocate-temporary-buffer
-            // 움직이는 webp 이미지나 큰사이즈의 webp 이미지에 대한 해결 방안은 아직 없는 것 같다
             $reprocessed_image = @$image_from_file($file_path);
-            // error_log("\$image_from_file = '$image_from_file',  \$image_to_file = '$image_to_file', \$reprocessed_image = '$reprocessed_image', \$file_path ='$file_path' ");
 
             if (!$reprocessed_image) {
               //throw new Exception("Unable to create reprocessed image from file");
@@ -1302,8 +1288,6 @@ class UploadHandler
                 return 'image/png';
             case 'gif':
                 return 'image/gif';
-            case 'webp':
-                return 'image/webp';
             default:
                 return '';
         }

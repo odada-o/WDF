@@ -2,18 +2,89 @@
 /* ### 기본 스타일 커스터마이징 시작 ### */
 
 /* 게시판 버튼 */
+/* 목록 버튼 */
+#bo_list a.btn_b01 {}
+#bo_list a.btn_b01:focus, #bo_list a.btn_b01:hover {}
+#bo_list a.btn_b02 {}
+#bo_list a.btn_b02:focus, #bo_list a.btn_b02:hover {}
+#bo_list a.btn_admin {} /* 관리자 전용 버튼 */
+#bo_list a.btn_admin:focus, #bo_list .btn_admin:hover {}
+
+/* 읽기 버튼 */
+#bo_v a.btn_b01 {}
+#bo_v a.btn_b01:focus, #bo_v a.btn_b01:hover {}
+#bo_v a.btn_b02 {}
+#bo_v a.btn_b02:focus, #bo_v a.btn_b02:hover {}
+#bo_v a.btn_admin {} /* 관리자 전용 버튼 */
+#bo_v a.btn_admin:focus, #bo_v a.btn_admin:hover {}
+
 /* 쓰기 버튼 */
+#bo_w .btn_confirm {} /* 서식단계 진행 */
 #bo_w .btn_submit {padding:0 20px;font-size:1.167em}
+#bo_w button.btn_submit {}
+#bo_w fieldset .btn_submit {}
 #bo_w .btn_cancel {font-size:1.167em;border-radius:3px}
+#bo_w button.btn_cancel {}
+#bo_w .btn_cancel:focus, #bo_w .btn_cancel:hover {}
+#bo_w a.btn_frmline, #bo_w button.btn_frmline {} /* 우편번호검색버튼 등 */
+#bo_w button.btn_frmline {}
 
 /* 기본 테이블 */
 /* 목록 테이블 */
 #bo_list {position:relative}
 #bo_list:after {display:block;visibility:hidden;clear:both;content:""}
+#bo_list .tbl_head01 {}
+#bo_list .tbl_head01 caption {}
+#bo_list .tbl_head01 thead th {}
+#bo_list .tbl_head01 thead a {}
+#bo_list .tbl_head01 thead th input {} /* middle 로 하면 게시판 읽기에서 목록 사용시 체크박스 라인 깨짐 */
+#bo_list .tbl_head01 tfoot th {}
+#bo_list .tbl_head01 tfoot td {}
+#bo_list .tbl_head01 tbody th {}
+#bo_list .tbl_head01 td {}
+#bo_list .tbl_head01 a {}
+#bo_list td.empty_table {}
 #bo_list tbody .even td {background:#fbfbfb}
+
+/* 읽기 내 테이블 */
+#bo_v .tbl_head01 {}
+#bo_v .tbl_head01 caption {}
+#bo_v .tbl_head01 thead th {}
+#bo_v .tbl_head01 thead a {}
+#bo_v .tbl_head01 thead th input {} /* middle 로 하면 게시판 읽기에서 목록 사용시 체크박스 라인 깨짐 */
+#bo_v .tbl_head01 tfoot th {}
+#bo_v .tbl_head01 tfoot td {}
+#bo_v .tbl_head01 tbody th {}
+#bo_v .tbl_head01 td {}
+#bo_v .tbl_head01 a {}
+#bo_v td.empty_table {}
 
 /* 쓰기 테이블 */
 #bo_w h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#bo_w table {}
+#bo_w caption {}
+#bo_w .frm_info {}
+#bo_w .frm_address {}
+#bo_w .frm_file {}
+
+#bo_w .tbl_frm01 {}
+#bo_w .tbl_frm01 th {}
+#bo_w .tbl_frm01 td {}
+#bo_w .tbl_frm01 textarea, #bo_w tbl_frm01 .frm_input {}
+#bo_w .tbl_frm01 textarea {}
+#bo_w .tbl_frm01 a {}
+
+/* 필수입력 */
+#bo_w .required, #bo_w textarea.required {}
+
+#bo_w .cke_sc {}
+#bo_w button.btn_cke_sc {}
+#bo_w .cke_sc_def {}
+#bo_w .cke_sc_def dl {}
+#bo_w .cke_sc_def dl:after {}
+#bo_w .cke_sc_def dt, #bo_w .cke_sc_def dd {}
+#bo_w .cke_sc_def dt {}
+#bo_w .cke_sc_def dd {}
 
 /* ### 기본 스타일 커스터마이징 끝 ### */
 
@@ -111,7 +182,7 @@ box-shadow:inset 0 2px 5px rgb(33, 135, 202)}
 .bo_sch select {border:0;width:100%;height:40px;border:1px solid #d0d3db;border-radius:2px;-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075);
 -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075);
 box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075)}
-.bo_sch .sch_bar {display:inline-block;width:100%;clear:both;margin-top:15px;border:1px solid #d0d3db;border-radius:2px;-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075);
+.bo_sch .sch_bar {display:inline-block;width:100%;clear:both;border:1px solid #d0d3db;border-radius:2px;-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075);
 -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075);
 box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075)}
 .bo_sch .sch_input {width:250px;height:38px;border:0;padding:0;background-color:transparent;float:left}
@@ -159,7 +230,7 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 #bo_v_info .profile_img img {border-radius:50%}
 
 #bo_v_file {margin:10px 0 0;background:#f3f3f3}
-#bo_v_file h2 {margin:0;padding:0 !important;height:0;overflow:hidden}
+#bo_v_file h2 {margin:0;padding:0;height:0;overflow:hidden}
 #bo_v_file ul {margin:0;padding:5px 0;list-style:none}
 #bo_v_file li {padding:5px 10px;position:relative}
 #bo_v_file a {display:inline-block;color:#3497d9;text-decoration:underline;word-wrap:break-word}
@@ -285,7 +356,7 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 
 /*글쓰기*/
 #bo_w .write_div {margin:10px 0;position:relative}
-#bo_w li, .form_01 li {position:relative}
+#bo_w li {position:relative}
 #bo_w .bo_w_info:after {display:block;visibility:hidden;clear:both;content:""}
 #bo_w .bo_w_info .frm_input {float:left;width:33%}
 #bo_w #wr_password {margin:0 0.5%}
@@ -294,11 +365,11 @@ html.no-overflowscrolling #autosave_pop {height:auto;max-height:10000px !importa
 #bo_w .bo_w_tit .frm_input {padding-right:120px}
 #bo_w .bo_w_tit #btn_autosave {position:absolute;top:5px;right:5px;line-height:30px;height:30px}
 #bo_w .bo_w_link label {position:absolute;top:1px;left:1px;border-radius:3px 0 0 3px;height:38px;line-height:38px;width:40px;font-size:1.2em;text-align:center;color:#b2b2b2}
-#bo_w .bo_w_link .frm_input, .form_01 .bo_w_link .frm_input {padding-left:50px}
-#bo_w .bo_w_flie .lb_icon, .form_01 .bo_w_flie .lb_icon {position:absolute;top:0px;left:0px;border-radius:3px 0 0 3px;height:38px;line-height:38px;width:40px;font-size:1.2em;text-align:center;color:#b2b2b2}
-#bo_w .bo_w_flie .frm_file, .form_01 .bo_w_flie .frm_file {padding-left:50px;margin-top:3px}
-#bo_w .bo_w_flie .file_wr, .form_01 .bo_w_flie .file_wr {border:1px solid #ccc;background:#fff;color:#000;vertical-align:middle;border-radius:3px;padding:5px;height:40px;margin:0}
-#bo_w .bo_w_flie .frm_input, .form_01 .bo_w_flie .frm_input {margin:10px 0 0}
+#bo_w .bo_w_link .frm_input {padding-left:50px}
+#bo_w .bo_w_flie .lb_icon {position:absolute;top:0px;left:0px;border-radius:3px 0 0 3px;height:38px;line-height:38px;width:40px;font-size:1.2em;text-align:center;color:#b2b2b2}
+#bo_w .bo_w_flie .frm_file {padding-left:50px;margin-top:3px}
+#bo_w .bo_w_flie .file_wr {border:1px solid #ccc;background:#fff;color:#000;vertical-align:middle;border-radius:3px;padding:5px;height:40px;margin:0}
+#bo_w .bo_w_flie .frm_input {margin:10px 0 0}
 #bo_w .bo_w_flie .file_del {position:absolute;top:10px;right:10px;font-size:0.92em;color:#7d7d7d}
 #bo_w .bo_w_select select {border:1px solid #d0d3db;width:100%;height:40px;border-radius:3px}
 

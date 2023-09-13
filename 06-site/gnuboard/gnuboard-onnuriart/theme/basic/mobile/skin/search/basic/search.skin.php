@@ -45,8 +45,7 @@ if ($stx) {
         <script>
         function fsearch_submit(f)
         {
-            var stx = f.stx.value.trim();
-            if (stx.length < 2) {
+            if (f.stx.value.length < 2) {
                 alert("검색어는 두글자 이상 입력하십시오.");
                 f.stx.select();
                 f.stx.focus();
@@ -55,8 +54,8 @@ if ($stx) {
 
             // 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
             var cnt = 0;
-            for (var i = 0; i < stx.length; i++) {
-                if (stx.charAt(i) == ' ')
+            for (var i=0; i<f.stx.value.length; i++) {
+                if (f.stx.value.charAt(i) == ' ')
                     cnt++;
             }
 
@@ -66,7 +65,6 @@ if ($stx) {
                 f.stx.focus();
                 return false;
             }
-            f.stx.value = stx;
 
             f.action = "";
             return true;
