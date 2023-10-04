@@ -17,9 +17,14 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="./dist/css/comm.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
     </head>
     <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
         <div class="wrap">
@@ -59,8 +64,8 @@
             <main id="main">
                 <div id="jumbotron" class="p-5 bg-primary text-white">
                     <div class="container">
-                        <h1>odada는 해외여행 가고 싶어.</h1>
-                        <p>Lorem ipsum...</p>
+                        <h1 data-aos="fade-in">odada는 해외여행 가고 싶어.</h1>
+                        <p data-aos="fade-in">Lorem ipsum...</p>
                     </div>
                 </div>
 
@@ -72,8 +77,18 @@
                         <div class="row">
                             <!-- sm : 768px 기준 -->
                             <div class="col-sm-8">
-                                <h2>제목</h2>
-                                <p>
+                                <h2
+                                    data-aos="fade-up"
+                                    data-aos-delay="50"
+                                    data-aos-duration="1000"
+                                    data-aos-easing="ease-in-out"
+                                    data-aos-mirror="true"
+                                    data-aos-once="false"
+                                    data-aos-anchor-placement="top-center"
+                                >
+                                    제목
+                                </h2>
+                                <p data-aos="fade-in">
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias tempore veniam
                                     dolore consequuntur. Alias, praesentium magnam! Necessitatibus iste, fugit autem
                                     minima consequuntur sed, harum earum sint rerum quibusdam, culpa nobis.
@@ -147,24 +162,7 @@
         </div>
 
         <script>
-            $(document).ready(function () {
-                // navbar 자식 중 a 태그를 클릭했을 때
-                $('.navbar a').on('click', function (event) {
-                    // 만약 this.hash 가 비어있지 않다면...
-                    if (this.hash !== '') {
-                        // 기본 이벤트를 막는다.
-                        event.preventDefault();
-                        // hash 값을 가져온다.
-                        let hash = this.hash;
-                        console.log(hash);
-
-                        // body, html의 scrollTop 값을 hash의 offset().top 값으로 이동한다.
-                        $('body, html').animate({
-                            top: '1000px',
-                        });
-                    }
-                });
-            });
+            AOS.init();
         </script>
     </body>
 </html>
