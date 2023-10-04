@@ -2,4 +2,8 @@
 [data-bs-theme=light] {
   --bs-primary: rgb(0, 255, 187);
   --bs-primary-rgb: 0, 255, 187;
+}
+
+.sec-g {
+  padding: 100px 0;
 }/*# sourceMappingURL=comm.css.map */
